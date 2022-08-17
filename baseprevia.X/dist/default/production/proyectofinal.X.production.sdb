@@ -1,0 +1,452 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F4550 ]
+[d frameptr 4065 ]
+"56 C:\Users\ivanm\MPLABXProjects\proyectofinal.X/LibLCDXC8.h
+[v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
+"60
+[v _EnviaDato EnviaDato `(v  1 e 1 0 ]
+[v i2_EnviaDato EnviaDato `(v  1 e 1 0 ]
+"72
+[v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
+"106
+[v _HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
+[v i2_HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
+"113
+[v _BorraLCD BorraLCD `(v  1 e 1 0 ]
+[v i2_BorraLCD BorraLCD `(v  1 e 1 0 ]
+"120
+[v _CursorAInicio CursorAInicio `(v  1 e 1 0 ]
+"137
+[v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
+[v i2_EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
+"146
+[v _EscribeLCD_n8 EscribeLCD_n8 `(v  1 e 1 0 ]
+"344
+[v _MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
+[v i2_MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
+"355
+[v _DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
+[v i2_DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
+"403
+[v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
+[v i2_RetardoLCD RetardoLCD `(v  1 e 1 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"9 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\lodiv.c
+[v ___lodiv __lodiv `(uo  1 e 8 0 ]
+"9 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\lomod.c
+[v ___lomod __lomod `(uo  1 e 8 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"57 C:\Users\ivanm\MPLABXProjects\proyectofinal.X\proyectofinal.c
+[v _main main `(v  1 e 1 0 ]
+"129
+[v _Transmitir Transmitir `(v  1 e 1 0 ]
+[v i2_Transmitir Transmitir `(v  1 e 1 0 ]
+"134
+[v _setorigin setorigin `(v  1 e 1 0 ]
+[v i2_setorigin setorigin `(v  1 e 1 0 ]
+"169
+[v _ira ira `(v  1 e 1 0 ]
+[v i2_ira ira `(v  1 e 1 0 ]
+"193
+[v _extender extender `(v  1 e 1 0 ]
+[v i2_extender extender `(v  1 e 1 0 ]
+"207
+[v _recoger recoger `(v  1 e 1 0 ]
+[v i2_recoger recoger `(v  1 e 1 0 ]
+"220
+[v _sacarV sacarV `(v  1 e 1 0 ]
+"286
+[v _guardarV guardarV `(v  1 e 1 0 ]
+[v i2_guardarV guardarV `(v  1 e 1 0 ]
+"338
+[v _ISR ISR `IIH(v  1 e 1 0 ]
+"35 C:\Users\ivanm\MPLABXProjects\proyectofinal.X/LibLCDXC8.h
+[v _interfaz interfaz `uc  1 e 1 0 ]
+"3074 C:\Program Files\Microchip\xc8\v2.36\pic\include\proc\pic18f4550.h
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+"3264
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"3376
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+"3626
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"4002
+[v _TRISD TRISD `VEuc  1 e 1 @3989 ]
+"4224
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+"4937
+[v _RCSTA RCSTA `VEuc  1 e 1 @4011 ]
+"5147
+[v _TXSTA TXSTA `VEuc  1 e 1 @4012 ]
+"5403
+[v _TXREG TXREG `VEuc  1 e 1 @4013 ]
+"5415
+[v _RCREG RCREG `VEuc  1 e 1 @4014 ]
+"5427
+[v _SPBRG SPBRG `VEuc  1 e 1 @4015 ]
+"6063
+[v _BAUDCON BAUDCON `VEuc  1 e 1 @4024 ]
+"6582
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"7987
+[v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
+"8070
+[v _T0CON T0CON `VEuc  1 e 1 @4053 ]
+"8140
+[v _TMR0 TMR0 `VEus  1 e 2 @4054 ]
+"9746
+[v _GIE GIE `VEb  1 e 0 @32663 ]
+"9962
+[v _LATB3 LATB3 `VEb  1 e 0 @31827 ]
+"9965
+[v _LATB4 LATB4 `VEb  1 e 0 @31828 ]
+"9968
+[v _LATB5 LATB5 `VEb  1 e 0 @31829 ]
+"9992
+[v _LATD0 LATD0 `VEb  1 e 0 @31840 ]
+"9995
+[v _LATD1 LATD1 `VEb  1 e 0 @31841 ]
+"10016
+[v _LATE0 LATE0 `VEb  1 e 0 @31848 ]
+"10019
+[v _LATE1 LATE1 `VEb  1 e 0 @31849 ]
+"10022
+[v _LATE2 LATE2 `VEb  1 e 0 @31850 ]
+"10364
+[v _RB0 RB0 `VEb  1 e 0 @31752 ]
+"10367
+[v _RB1 RB1 `VEb  1 e 0 @31753 ]
+"10370
+[v _RB2 RB2 `VEb  1 e 0 @31754 ]
+"10397
+[v _RBPU RBPU `VEb  1 e 0 @32655 ]
+"10445
+[v _RCIE RCIE `VEb  1 e 0 @31981 ]
+"10448
+[v _RCIF RCIF `VEb  1 e 0 @31989 ]
+"10451
+[v _RCIP RCIP `VEb  1 e 0 @31997 ]
+"10817
+[v _TMR0IE TMR0IE `VEb  1 e 0 @32661 ]
+"10820
+[v _TMR0IF TMR0IF `VEb  1 e 0 @32658 ]
+"10979
+[v _TRMT TRMT `VEb  1 e 0 @32097 ]
+"25 C:\Users\ivanm\MPLABXProjects\proyectofinal.X\proyectofinal.c
+[v _vactual vactual `i  1 e 2 0 ]
+[v _vs vs `i  1 e 2 0 ]
+[v _carro carro `i  1 e 2 0 ]
+[v _contador contador `i  1 e 2 0 ]
+"33
+[v _carro1 carro1 `[2]i  1 e 4 0 ]
+"34
+[v _carro2 carro2 `[2]i  1 e 4 0 ]
+"35
+[v _carro3 carro3 `[2]i  1 e 4 0 ]
+"36
+[v _carro4 carro4 `[2]i  1 e 4 0 ]
+"37
+[v _carro5 carro5 `[2]i  1 e 4 0 ]
+"38
+[v _carro6 carro6 `[2]i  1 e 4 0 ]
+"39
+[v _carro7 carro7 `[2]i  1 e 4 0 ]
+"40
+[v _carro8 carro8 `[2]i  1 e 4 0 ]
+"41
+[v _carro9 carro9 `[2]i  1 e 4 0 ]
+"44
+[v _estado estado `i  1 e 2 0 ]
+[v _estadob estadob `i  1 e 2 0 ]
+"45
+[v _lectura lectura `uc  1 e 1 0 ]
+"46
+[v _posX posX `uo  1 e 8 0 ]
+[v _posY posY `uo  1 e 8 0 ]
+"57
+[v _main main `(v  1 e 1 0 ]
+{
+"128
+} 0
+"134
+[v _setorigin setorigin `(v  1 e 1 0 ]
+{
+"159
+[v setorigin@i i `i  1 a 2 19 ]
+"168
+} 0
+"220
+[v _sacarV sacarV `(v  1 e 1 0 ]
+{
+"285
+} 0
+"286
+[v _guardarV guardarV `(v  1 e 1 0 ]
+{
+"337
+} 0
+"207
+[v _recoger recoger `(v  1 e 1 0 ]
+{
+"210
+[v recoger@i i `i  1 a 2 19 ]
+"219
+} 0
+"169
+[v _ira ira `(v  1 e 1 0 ]
+{
+[v ira@desX desX `i  1 p 2 18 ]
+[v ira@desY desY `i  1 p 2 20 ]
+"191
+} 0
+"193
+[v _extender extender `(v  1 e 1 0 ]
+{
+"196
+[v extender@i i `i  1 a 2 19 ]
+"204
+} 0
+"129
+[v _Transmitir Transmitir `(v  1 e 1 0 ]
+{
+[v Transmitir@dato dato `uc  1 a 1 wreg ]
+[v Transmitir@dato dato `uc  1 a 1 wreg ]
+[v Transmitir@dato dato `uc  1 a 1 18 ]
+"133
+} 0
+"344 C:\Users\ivanm\MPLABXProjects\proyectofinal.X/LibLCDXC8.h
+[v _MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
+{
+"348
+[v MensajeLCD_Var@p p `*.25uc  1 a 2 2 ]
+"344
+[v MensajeLCD_Var@a a `*.25uc  1 p 2 0 ]
+"354
+} 0
+"137
+[v _EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
+{
+[v EscribeLCD_c@a a `uc  1 a 1 wreg ]
+[v EscribeLCD_c@a a `uc  1 a 1 wreg ]
+"141
+[v EscribeLCD_c@a a `uc  1 a 1 23 ]
+"145
+} 0
+"72
+[v _InicializaLCD InicializaLCD `(v  1 e 1 0 ]
+{
+"105
+} 0
+"113
+[v _BorraLCD BorraLCD `(v  1 e 1 0 ]
+{
+"119
+} 0
+"146
+[v _EscribeLCD_n8 EscribeLCD_n8 `(v  1 e 1 0 ]
+{
+[v EscribeLCD_n8@a a `uc  1 a 1 wreg ]
+"151
+[v EscribeLCD_n8@unidad unidad `uc  1 a 1 12 ]
+[v EscribeLCD_n8@decena decena `uc  1 a 1 11 ]
+[v EscribeLCD_n8@centena centena `uc  1 a 1 10 ]
+"146
+[v EscribeLCD_n8@a a `uc  1 a 1 wreg ]
+[v EscribeLCD_n8@b b `uc  1 p 1 24 ]
+"152
+[v EscribeLCD_n8@a a `uc  1 a 1 13 ]
+"183
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 23 ]
+[v ___awmod@counter counter `uc  1 a 1 22 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 18 ]
+[v ___awmod@divisor divisor `i  1 p 2 20 ]
+"34
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
+"355 C:\Users\ivanm\MPLABXProjects\proyectofinal.X/LibLCDXC8.h
+[v _DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
+{
+[v DireccionaLCD@a a `uc  1 a 1 wreg ]
+[v DireccionaLCD@a a `uc  1 a 1 wreg ]
+"358
+[v DireccionaLCD@a a `uc  1 a 1 23 ]
+"362
+} 0
+"60
+[v _EnviaDato EnviaDato `(v  1 e 1 0 ]
+{
+[v EnviaDato@a a `uc  1 a 1 wreg ]
+[v EnviaDato@a a `uc  1 a 1 wreg ]
+[v EnviaDato@a a `uc  1 a 1 22 ]
+"71
+} 0
+"403
+[v _RetardoLCD RetardoLCD `(v  1 e 1 0 ]
+{
+[v RetardoLCD@a a `uc  1 a 1 wreg ]
+[v RetardoLCD@a a `uc  1 a 1 wreg ]
+[v RetardoLCD@a a `uc  1 a 1 20 ]
+"421
+} 0
+"106
+[v _HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
+{
+"112
+} 0
+"56
+[v _ConfiguraLCD ConfiguraLCD `(v  1 e 1 0 ]
+{
+[v ConfiguraLCD@a a `uc  1 a 1 wreg ]
+[v ConfiguraLCD@a a `uc  1 a 1 wreg ]
+[v ConfiguraLCD@a a `uc  1 a 1 18 ]
+"59
+} 0
+"338 C:\Users\ivanm\MPLABXProjects\proyectofinal.X\proyectofinal.c
+[v _ISR ISR `IIH(v  1 e 1 0 ]
+{
+"383
+} 0
+"134
+[v i2_setorigin setorigin `(v  1 e 1 0 ]
+{
+"159
+[v i2setorigin@i i `i  1 a 2 1 ]
+"168
+} 0
+"286
+[v i2_guardarV guardarV `(v  1 e 1 0 ]
+{
+"337
+} 0
+"207
+[v i2_recoger recoger `(v  1 e 1 0 ]
+{
+"210
+[v i2recoger@i i `i  1 a 2 1 ]
+"219
+} 0
+"169
+[v i2_ira ira `(v  1 e 1 0 ]
+{
+[v i2ira@desX desX `i  1 p 2 0 ]
+[v i2ira@desY desY `i  1 p 2 2 ]
+"191
+} 0
+"193
+[v i2_extender extender `(v  1 e 1 0 ]
+{
+"196
+[v i2extender@i i `i  1 a 2 1 ]
+"204
+} 0
+"129
+[v i2_Transmitir Transmitir `(v  1 e 1 0 ]
+{
+[v i2Transmitir@dato dato `uc  1 a 1 wreg ]
+[v i2Transmitir@dato dato `uc  1 a 1 wreg ]
+[v i2Transmitir@dato dato `uc  1 a 1 0 ]
+"133
+} 0
+"344 C:\Users\ivanm\MPLABXProjects\proyectofinal.X/LibLCDXC8.h
+[v i2_MensajeLCD_Var MensajeLCD_Var `(v  1 e 1 0 ]
+{
+"348
+[v i2MensajeLCD_Var@p p `*.25uc  1 a 2 8 ]
+"344
+[v i2MensajeLCD_Var@a a `*.25uc  1 p 2 6 ]
+"354
+} 0
+"137
+[v i2_EscribeLCD_c EscribeLCD_c `(v  1 e 1 0 ]
+{
+[v i2EscribeLCD_c@a a `uc  1 a 1 wreg ]
+[v i2EscribeLCD_c@a a `uc  1 a 1 wreg ]
+"141
+[v i2EscribeLCD_c@a a `uc  1 a 1 5 ]
+"145
+} 0
+"355
+[v i2_DireccionaLCD DireccionaLCD `(v  1 e 1 0 ]
+{
+[v i2DireccionaLCD@a a `uc  1 a 1 wreg ]
+[v i2DireccionaLCD@a a `uc  1 a 1 wreg ]
+"358
+[v i2DireccionaLCD@a a `uc  1 a 1 5 ]
+"362
+} 0
+"113
+[v i2_BorraLCD BorraLCD `(v  1 e 1 0 ]
+{
+"119
+} 0
+"60
+[v i2_EnviaDato EnviaDato `(v  1 e 1 0 ]
+{
+[v i2EnviaDato@a a `uc  1 a 1 wreg ]
+[v i2EnviaDato@a a `uc  1 a 1 wreg ]
+[v i2EnviaDato@a a `uc  1 a 1 4 ]
+"71
+} 0
+"403
+[v i2_RetardoLCD RetardoLCD `(v  1 e 1 0 ]
+{
+[v i2RetardoLCD@a a `uc  1 a 1 wreg ]
+[v i2RetardoLCD@a a `uc  1 a 1 wreg ]
+[v i2RetardoLCD@a a `uc  1 a 1 2 ]
+"421
+} 0
+"106
+[v i2_HabilitaLCD HabilitaLCD `(v  1 e 1 0 ]
+{
+"112
+} 0
