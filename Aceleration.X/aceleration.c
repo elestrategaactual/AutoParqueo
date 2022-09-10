@@ -14,11 +14,13 @@
 #pragma config LVP=OFF
 
 void __interrupt() ISR(void);
-//unsigned int array(int pasos);
 void precargas(void);
+void goHome(void);
+void mover(long int x,long int y, long int z,int absoluto);
 
-int pasosX,pasosY,pasosZ;        //Pasos requeridos
-int pasosXDados,pasosYDados,pasosZDados;        //Pasos dados
+const int tDelay = 400;
+unsigned int pasosX,pasosY,pasosZ;        //Pasos requeridos
+unsigned int pasosXDados,pasosYDados,pasosZDados;        //Pasos dados
 float Ta; //Tiempo de aceleracion y desaceleracion [s]
 float deltaT;     //Tiempo de cada intervalo  [s]
 float vCx,vCy;        //Velocidad crucero [pasos/s]
@@ -27,39 +29,43 @@ float TIntx,TInty;    //Periodo de Interrupción[s]
 float v5x,v5y;          //Velocidad del 5%
 unsigned int precargaX,precargaY;        //Precarga para las interrupciones
 float TvC;    //Tiempo de velocidad crucero [s]
-int ac,cru,des,counter,counterVC;
+int ac,cru,des;                 //Banderas de proceso
+int finX,finY,finZ;             //Banderas de finalización
+int counter,counterVC;          //Contadores
 unsigned int arrayX[20];        //Precargas para X
 unsigned int arrayY[20];        //Precargas para Y
+unsigned int posiciones[11][2]={{0,0},                      //Home
+                                {0,15600},                  //car1
+                                {8700,15600},               //car2
+                                {17600,15600},              //car3
+                                {0,11600},                  //car4
+                                {8700,11600},               //car5
+                                {17600,11600},              //car6
+                                {0,7600},                   //car7
+                                {8700,7600},                //car8
+                                {17600,7600},               //car9
+                                {8700,19500}};              //StandBy - Posiciones absolutas
+unsigned int posX,posY,posZ;        //Posiciones del robot
 
 
 void main(void) {
     
-    counter = -1;
-    counterVC = 0;
-    ac=1;
-    des=0;
-    cru=0;
-    
-    pasosX = 7000;
-    pasosY = 10000;
-    pasosXDados = 0;
-    pasosYDados = 0;
     Ta = 4.5; //s
     deltaT = Ta/20;//s
-    vCx = (pasosX*0.5)/Ta;
-    vCy = (pasosY*0.5)/Ta;
-    v5x = 0.05*vCx;
-    v5y = 0.05*vCy;
     
-    precargas();
-    
+    mover(posiciones[9][0],posiciones[9][1],0,0);
+        
     //Configuramos tres pines del puerto D como salida para los pulsos de los tres motores
-    TRISD = 0b11100000; //D0 xStep, D1 YStep, D2 xDir, D3 yDir
+    TRISD = 0b111000000; //D0 xStep, D1 YStep, D2 xDir, D3 yDir, D4 zDir, D5 ZStep
     LATD = 0;
     
     //Direcciones
     LATD2 = 1;      //Dirección motor X
     LATD3 = 1;      //Dirección motor Y
+    LATD4 = 1;      //Dirección motor Z
+    
+    //Configuracion pines de los finales de carrera
+    TRISB = 0b11111111; //B0 FinalX, B1 FinalY, B2 FinalZ
     
     //Limpiamos las banderas de los temporizadores
     TMR0IF = 0;
@@ -126,15 +132,19 @@ void __interrupt() ISR(void){
             precargaY=arrayY[counter];
         }
         
-        if(pasosXDados<pasosX){
-            //TMR1ON=1;
+        if(finX==0){
             TMR1 = precargaX;
         }
         
-        if(pasosYDados<pasosY){
-            //TMR3ON=1;
+        if(finY==0){
             TMR3 = precargaY;
-        }  
+        }
+        
+        if(finY==1 && finX==1){
+            TMR0ON = 0;
+            TMR1ON = 0;
+            TMR3ON = 0;
+        }
     }
     
     if(TMR1IF==1){
@@ -146,6 +156,9 @@ void __interrupt() ISR(void){
             LATD0=0;
         } else if(LATD0==0 && pasosXDados<pasosX){
             LATD0=1;
+        }  else if(pasosXDados>=pasosX){
+            finX = 1;
+            TMR1ON = 0;
         }
         
     }
@@ -159,6 +172,9 @@ void __interrupt() ISR(void){
             LATD1 = 0;
         } else if(LATD1==0 && pasosYDados<pasosY){
             LATD1=1;
+        } else if(pasosYDados>=pasosY){
+            finY = 1;
+            TMR3ON = 0;
         }
     }
 }
@@ -173,4 +189,116 @@ void precargas(void){
         arrayX[i-1] = (unsigned int)(65536 - ((TIntx*2000000)/4));//(unsigned int)(65536 - ((TIntx*2000000)/4));
         arrayY[i-1] = (unsigned int)(65536 - ((TInty*2000000)/4));
    }
+}
+
+void goHome(void){
+    //Direcciones
+    LATD2 = 0;      //Dirección motor X
+    LATD3 = 0;      //Dirección motor Y
+    LATD4 = 0;      //Dirección motor Z
+    
+
+    
+    while(RB2==0){  //Devolver el Z
+        LATD5=1;
+        __delay_us(tDelay);
+        LATD5=0;
+        __delay_us(tDelay);
+    }
+    
+    while(RB0==0 || RB1==0){
+        if(RB0==0){
+            LATD0=1;    //Step X
+        }
+        
+        if(RB1==0){
+            LATD1=1;    //Step Y
+        }
+        
+        __delay_us(tDelay);
+        
+        LATD0=0;
+        LATD1=0;
+        
+        __delay_us(tDelay);
+    }
+    
+    posX=0;
+    posY=0;
+    posZ=0;
+}
+
+
+void mover(long int x,long int y, long int z, int absoluto){
+    if(absoluto==1){    //Absoluto
+        if(x>posX){
+            pasosX = (unsigned int)(x-posX);
+            LATD2 = 1;      //Dirección motor X
+        }else{
+            pasosX = (unsigned int)(posX-x);
+            LATD2 = 0;      //Dirección motor X
+        }
+        
+        if(y>posY){
+            pasosY = (unsigned int)(y-posY);
+            LATD3 = 1;      //Dirección motor y
+        }else{
+            pasosY = (unsigned int)(posY-y);
+            LATD3 = 0;      //Dirección motor y
+        }
+        
+        if(z>posZ){
+            pasosZ = (unsigned int)(z-posZ);
+            LATD4 = 1;      //Dirección motor Z
+        }else{
+            pasosZ = (unsigned int)(posZ-z);
+            LATD4 = 0;      //Dirección motor Z
+        }
+    }else{      //Incremental
+        if(x>0){
+            pasosX = (unsigned int)(x);
+            LATD2 = 1;      //Dirección motor X
+        }else{
+            pasosX = (unsigned int)(-x);
+            LATD2 = 0;      //Dirección motor X
+        }
+        
+        if(y>0){
+            pasosY = (unsigned int)(y);
+            LATD3 = 1;      //Dirección motor y
+        }else{
+            pasosY = (unsigned int)(-y);
+            LATD3 = 0;      //Dirección motor y
+        }
+        
+        if(z>0){
+            pasosZ = (unsigned int)(z);
+            LATD4 = 1;      //Dirección motor Z
+        }else{
+            pasosZ = (unsigned int)(-z);
+            LATD4 = 0;      //Dirección motor Z
+        }
+    }
+    
+    if (pasosX>0){
+        pasosXDados = 0;
+        vCx = (pasosX*0.5)/Ta;
+        v5x = 0.05*vCx;
+    }
+    
+    if (pasosY>0){
+        pasosYDados = 0;
+        vCy = (pasosY*0.5)/Ta;
+        v5y = 0.05*vCy;
+    }
+    
+    if(pasosX>0 || pasosY>0){
+        counter = -1;
+        counterVC = 0;
+        ac=1;
+        des=0;
+        cru=0;
+        
+        precargas();
+    }        
 }

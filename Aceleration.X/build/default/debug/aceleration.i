@@ -5734,11 +5734,13 @@ unsigned char __t3rd16on(void);
 #pragma config LVP=OFF
 
 void __attribute__((picinterrupt(("")))) ISR(void);
-
 void precargas(void);
+void goHome(void);
+void mover(long int x,long int y, long int z,int absoluto);
 
-int pasosX,pasosY,pasosZ;
-int pasosXDados,pasosYDados,pasosZDados;
+const int tDelay = 400;
+unsigned int pasosX,pasosY,pasosZ;
+unsigned int pasosXDados,pasosYDados,pasosZDados;
 float Ta;
 float deltaT;
 float vCx,vCy;
@@ -5747,39 +5749,43 @@ float TIntx,TInty;
 float v5x,v5y;
 unsigned int precargaX,precargaY;
 float TvC;
-int ac,cru,des,counter,counterVC;
+int ac,cru,des;
+int finX,finY,finZ;
+int counter,counterVC;
 unsigned int arrayX[20];
 unsigned int arrayY[20];
+unsigned int posiciones[11][2]={{0,0},
+                                {0,15600},
+                                {8700,15600},
+                                {17600,15600},
+                                {0,11600},
+                                {8700,11600},
+                                {17600,11600},
+                                {0,7600},
+                                {8700,7600},
+                                {17600,7600},
+                                {8700,19500}};
+unsigned int posX,posY,posZ;
 
 
 void main(void) {
 
-    counter = -1;
-    counterVC = 0;
-    ac=1;
-    des=0;
-    cru=0;
-
-    pasosX = 7000;
-    pasosY = 10000;
-    pasosXDados = 0;
-    pasosYDados = 0;
     Ta = 4.5;
     deltaT = Ta/20;
-    vCx = (pasosX*0.5)/Ta;
-    vCy = (pasosY*0.5)/Ta;
-    v5x = 0.05*vCx;
-    v5y = 0.05*vCy;
 
-    precargas();
+    mover(posiciones[9][0],posiciones[9][1],0,0);
 
 
-    TRISD = 0b11100000;
+    TRISD = 0b111000000;
     LATD = 0;
 
 
     LATD2 = 1;
     LATD3 = 1;
+    LATD4 = 1;
+
+
+    TRISB = 0b11111111;
 
 
     TMR0IF = 0;
@@ -5846,14 +5852,18 @@ void __attribute__((picinterrupt(("")))) ISR(void){
             precargaY=arrayY[counter];
         }
 
-        if(pasosXDados<pasosX){
-
+        if(finX==0){
             TMR1 = precargaX;
         }
 
-        if(pasosYDados<pasosY){
-
+        if(finY==0){
             TMR3 = precargaY;
+        }
+
+        if(finY==1 && finX==1){
+            TMR0ON = 0;
+            TMR1ON = 0;
+            TMR3ON = 0;
         }
     }
 
@@ -5866,6 +5876,9 @@ void __attribute__((picinterrupt(("")))) ISR(void){
             LATD0=0;
         } else if(LATD0==0 && pasosXDados<pasosX){
             LATD0=1;
+        } else if(pasosXDados>=pasosX){
+            finX = 1;
+            TMR1ON = 0;
         }
 
     }
@@ -5879,6 +5892,9 @@ void __attribute__((picinterrupt(("")))) ISR(void){
             LATD1 = 0;
         } else if(LATD1==0 && pasosYDados<pasosY){
             LATD1=1;
+        } else if(pasosYDados>=pasosY){
+            finY = 1;
+            TMR3ON = 0;
         }
     }
 }
@@ -5893,4 +5909,116 @@ void precargas(void){
         arrayX[i-1] = (unsigned int)(65536 - ((TIntx*2000000)/4));
         arrayY[i-1] = (unsigned int)(65536 - ((TInty*2000000)/4));
    }
+}
+
+void goHome(void){
+
+    LATD2 = 0;
+    LATD3 = 0;
+    LATD4 = 0;
+
+
+
+    while(RB2==0){
+        LATD5=1;
+        _delay((unsigned long)((tDelay)*(8000000/4000000.0)));
+        LATD5=0;
+        _delay((unsigned long)((tDelay)*(8000000/4000000.0)));
+    }
+
+    while(RB0==0 || RB1==0){
+        if(RB0==0){
+            LATD0=1;
+        }
+
+        if(RB1==0){
+            LATD1=1;
+        }
+
+        _delay((unsigned long)((tDelay)*(8000000/4000000.0)));
+
+        LATD0=0;
+        LATD1=0;
+
+        _delay((unsigned long)((tDelay)*(8000000/4000000.0)));
+    }
+
+    posX=0;
+    posY=0;
+    posZ=0;
+}
+
+
+void mover(long int x,long int y, long int z, int absoluto){
+    if(absoluto==1){
+        if(x>posX){
+            pasosX = (unsigned int)(x-posX);
+            LATD2 = 1;
+        }else{
+            pasosX = (unsigned int)(posX-x);
+            LATD2 = 0;
+        }
+
+        if(y>posY){
+            pasosY = (unsigned int)(y-posY);
+            LATD3 = 1;
+        }else{
+            pasosY = (unsigned int)(posY-y);
+            LATD3 = 0;
+        }
+
+        if(z>posZ){
+            pasosZ = (unsigned int)(z-posZ);
+            LATD4 = 1;
+        }else{
+            pasosZ = (unsigned int)(posZ-z);
+            LATD4 = 0;
+        }
+    }else{
+        if(x>0){
+            pasosX = (unsigned int)(x);
+            LATD2 = 1;
+        }else{
+            pasosX = (unsigned int)(-x);
+            LATD2 = 0;
+        }
+
+        if(y>0){
+            pasosY = (unsigned int)(y);
+            LATD3 = 1;
+        }else{
+            pasosY = (unsigned int)(-y);
+            LATD3 = 0;
+        }
+
+        if(z>0){
+            pasosZ = (unsigned int)(z);
+            LATD4 = 1;
+        }else{
+            pasosZ = (unsigned int)(-z);
+            LATD4 = 0;
+        }
+    }
+
+    if (pasosX>0){
+        pasosXDados = 0;
+        vCx = (pasosX*0.5)/Ta;
+        v5x = 0.05*vCx;
+    }
+
+    if (pasosY>0){
+        pasosYDados = 0;
+        vCy = (pasosY*0.5)/Ta;
+        v5y = 0.05*vCy;
+    }
+
+    if(pasosX>0 || pasosY>0){
+        counter = -1;
+        counterVC = 0;
+        ac=1;
+        des=0;
+        cru=0;
+
+        precargas();
+    }
 }
