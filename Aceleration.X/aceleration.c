@@ -17,7 +17,6 @@ void __interrupt() ISR(void);
 //unsigned int array(int pasos);
 void precargas(void);
 
-unsigned int flagx,flagy;
 int pasosX,pasosY,pasosZ;        //Pasos requeridos
 int pasosXDados,pasosYDados,pasosZDados;        //Pasos dados
 float Ta; //Tiempo de aceleracion y desaceleracion [s]
@@ -29,8 +28,8 @@ float v5x,v5y;          //Velocidad del 5%
 unsigned int precargaX,precargaY;        //Precarga para las interrupciones
 float TvC;    //Tiempo de velocidad crucero [s]
 int ac,cru,des,counter,counterVC;
-unsigned int arrayX[20];
-unsigned int arrayY[20];
+unsigned int arrayX[20];        //Precargas para X
+unsigned int arrayY[20];        //Precargas para Y
 
 
 void main(void) {
@@ -42,7 +41,7 @@ void main(void) {
     cru=0;
     
     pasosX = 7000;
-    pasosY = 7000;
+    pasosY = 10000;
     pasosXDados = 0;
     pasosYDados = 0;
     Ta = 4.5; //s
@@ -142,10 +141,11 @@ void __interrupt() ISR(void){
         TMR1IF=0;
         TMR1 = precargaX;
         
-        LATD0 = flagx++%2;
-        
-        if(LATD0==1){
+        if(LATD0==1 && pasosXDados<pasosX){
             pasosXDados++;
+            LATD0=0;
+        } else if(LATD0==0 && pasosXDados<pasosX){
+            LATD0=1;
         }
         
     }
@@ -154,10 +154,11 @@ void __interrupt() ISR(void){
         TMR3IF=0;
         TMR3 = precargaY;
         
-        LATD1 = flagy++%2;
-        
-        if(LATD1==1){
+        if(LATD1==1 && pasosYDados<pasosY){
             pasosYDados++;
+            LATD1 = 0;
+        } else if(LATD1==0 && pasosYDados<pasosY){
+            LATD1=1;
         }
     }
 }
