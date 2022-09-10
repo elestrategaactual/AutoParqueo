@@ -5737,7 +5737,6 @@ void __attribute__((picinterrupt(("")))) ISR(void);
 
 void precargas(void);
 
-unsigned int flagx,flagy;
 int pasosX,pasosY,pasosZ;
 int pasosXDados,pasosYDados,pasosZDados;
 float Ta;
@@ -5762,7 +5761,7 @@ void main(void) {
     cru=0;
 
     pasosX = 7000;
-    pasosY = 7000;
+    pasosY = 10000;
     pasosXDados = 0;
     pasosYDados = 0;
     Ta = 4.5;
@@ -5862,10 +5861,11 @@ void __attribute__((picinterrupt(("")))) ISR(void){
         TMR1IF=0;
         TMR1 = precargaX;
 
-        LATD0 = flagx++%2;
-
-        if(LATD0==1){
+        if(LATD0==1 && pasosXDados<pasosX){
             pasosXDados++;
+            LATD0=0;
+        } else if(LATD0==0 && pasosXDados<pasosX){
+            LATD0=1;
         }
 
     }
@@ -5874,10 +5874,11 @@ void __attribute__((picinterrupt(("")))) ISR(void){
         TMR3IF=0;
         TMR3 = precargaY;
 
-        LATD1 = flagy++%2;
-
-        if(LATD1==1){
+        if(LATD1==1 && pasosYDados<pasosY){
             pasosYDados++;
+            LATD1 = 0;
+        } else if(LATD1==0 && pasosYDados<pasosY){
+            LATD1=1;
         }
     }
 }

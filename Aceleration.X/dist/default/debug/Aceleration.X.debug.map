@@ -6,9 +6,9 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v2.40\pic\dat\20220703182018_en.msgs \
   -cn -h+dist/default/debug\Aceleration.X.debug.sym \
   --cmf=dist/default/debug\Aceleration.X.debug.cmf -z -Q18F4550 \
-  -oC:\Users\felip\AppData\Local\Temp\xcAs8ik.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\felip\AppData\Local\Temp\xcAsddg.4 --defsym=__MPLAB_BUILD=1 \
   --fixupoverflow=error -Mdist/default/debug/Aceleration.X.debug.map \
-  --md=C:\Users\felip\AppData\Local\Temp\xcAs8ik.dat -E1 -ver=XC8 Compiler \
+  --md=C:\Users\felip\AppData\Local\Temp\xcAsddg.dat -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0800h-08FFhx120 -AMEDIUMCONST=0800h-07FFFh -ACOMRAM=01h-05Fh \
   -AABS1=00h-07FFh -ABIGRAM=01h-07FFh -ARAM=060h-0FFh,0100h-01FFhx7 \
@@ -24,7 +24,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\felip\AppData\Local\Temp\xcAs8ik.o \
+  C:\Users\felip\AppData\Local\Temp\xcAsddg.o \
   dist/default/debug\Aceleration.X.debug.o 
 
 Object code version is 3.11
@@ -34,7 +34,7 @@ Machine type is 18F4550
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\felip\AppData\Local\Temp\xcAs8ik.o
+C:\Users\felip\AppData\Local\Temp\xcAsddg.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 init                                  E        E        4        4       0
@@ -44,21 +44,21 @@ dist/default/debug\Aceleration.X.debug.o
                 idloc                            200000   200000        8        0       5
                 config                           300000   300000        E        0       4
                 temp                                 5C       5C        1        1       1
-                intcode_body                        C96      C96      276        4       0
+                intcode_body                        C96      C96      2EE        4       0
                 text7                               8FC      8FC      39A        4       0
                 text6                               4D2      4D2      42A        4       0
                 text5                                12       12      4C0        4       0
-                text4                              1642     1642       46        4       0
-                text3                              153C     153C      106        4       0
-                text2                              1388     1388      1B4        4       0
-                text1                               F0C      F0C      264        4       0
-                text0                              1170     1170      218        4       0
+                text4                              16BA     16BA       46        4       0
+                text3                              15B4     15B4      106        4       0
+                text2                              1400     1400      1B4        4       0
+                text1                               F84      F84      264        4       0
+                text0                              11E8     11E8      218        4       0
                 cstackCOMRAM                          1        1       55        1       1
-                cstackBANK0                          F4       F4        2       60       1
-                bssBANK0                             60       60       76       60       1
+                cstackBANK0                          F0       F0        2       60       1
+                bssBANK0                             60       60       72       60       1
                 bssCOMRAM                            56       56        4        1       1
-                cinit                              1688     1688       1E        4       0
-                nvBANK0                              D6       D6       1E       60       1
+                cinit                              1700     1700       1E        4       0
+                nvBANK0                              D2       D2       1E       60       1
                 nvCOMRAM                             5A       5A        2        1       1
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -66,16 +66,16 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intcode                               8        8        6         0
                 init                                  E        E        4         0
                 reset_vec                             0        0        4         0
-                intcode_body                        C96      C96      276         0
+                intcode_body                        C96      C96      2EE         0
                 text7                               8FC      8FC      39A         0
                 text6                               4D2      4D2      42A         0
                 text5                                12       12      4C0         0
-                text4                              1642     1642       46         0
-                text3                              153C     153C      106         0
-                text2                              1388     1388      1B4         0
-                text1                               F0C      F0C      264         0
-                text0                              1170     1170      218         0
-                cinit                              1688     1688       1E         0
+                text4                              16BA     16BA       46         0
+                text3                              15B4     15B4      106         0
+                text2                              1400     1400      1B4         0
+                text1                               F84      F84      264         0
+                text0                              11E8     11E8      218         0
+                cinit                              1700     1700       1E         0
 
         CLASS   CONST          
 
@@ -96,9 +96,9 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   RAM            
 
         CLASS   BANK0          
-                cstackBANK0                          F4       F4        2         1
-                bssBANK0                             60       60       76         1
-                nvBANK0                              D6       D6       1E         1
+                cstackBANK0                          F0       F0        2         1
+                bssBANK0                             60       60       72         1
+                nvBANK0                              D2       D2       1E         1
 
         CLASS   BANK1          
 
@@ -138,14 +138,14 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  00005C  00005D         1       1  COMRAM  
-                intcode                        000008  00169E  0016A6         4       0  CODE    
-                bssBANK0                       000060  000096  0000F6        60       1  BANK0   
+                intcode                        000008  001716  00171E         4       0  CODE    
+                bssBANK0                       000060  000092  0000F2        60       1  BANK0   
 
 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0000F6-0000FF                A
+        BANK0            0000F2-0000FF                E
         BANK1            000100-0001FF              100
         BANK2            000200-0002FF              100
         BANK3            000300-0003FF              100
@@ -154,18 +154,18 @@ UNUSED ADDRESS RANGES
         BANK6            000600-0006FF              100
         BANK7            000700-0007FF              100
         BIGRAM           00005D-00005F                3
-                         0000F6-0007FF              70A
+                         0000F2-0007FF              70E
         BIGSFR           000F60-000FFF               A0
         CODE             000004-000007                4
-                         0016A6-007FFF             695A
+                         00171E-007FFF             68E2
         COMRAM           00005D-00005F                3
         CONST            000004-000007                4
-                         0016A6-007FFF             695A
+                         00171E-007FFF             68E2
         EEDATA           F00000-F000FF              100
-        MEDIUMCONST      0016A6-007FFF             695A
-        RAM              0000F6-0007FF              100
+        MEDIUMCONST      00171E-007FFF             68E2
+        RAM              0000F2-0007FF              100
         SFR              000F60-000FFF               A0
-        SMALLCONST       0016A6-007FFF              100
+        SMALLCONST       00171E-007FFF              100
 
                                   Symbol Table
 
@@ -202,7 +202,7 @@ _TMR3IE                  (abs)        007D01
 _TMR3IF                  (abs)        007D09
 _TMR3ON                  (abs)        007D88
 _TRISD                   (abs)        000F95
-_Ta                      nvBANK0      0000E2
+_Ta                      nvBANK0      0000DE
 _TvC                     bssBANK0     0000B0
 __HRAM                   (abs)        000000
 __Habs1                  abs1         000000
@@ -262,8 +262,8 @@ __Hreset_vec             reset_vec    000004
 __Hrparam                rparam       000000
 __Hsfr                   sfr          000000
 __Hsmallconst            smallconst   000000
-__Hspace_0               (abs)        0016A6
-__Hspace_1               (abs)        0000F6
+__Hspace_0               (abs)        00171E
+__Hspace_1               (abs)        0000F2
 __Hspace_2               (abs)        000000
 __Hspace_4               (abs)        60000E
 __Hstack                 stack        000000
@@ -352,8 +352,8 @@ __Ltext4                 text4        000000
 __Ltext5                 text5        000000
 __Ltext6                 text6        000000
 __Ltext7                 text7        000000
-__S0                     (abs)        0016A6
-__S1                     (abs)        0000F6
+__S0                     (abs)        00171E
+__S1                     (abs)        0000F2
 __S4                     (abs)        000000
 __S5                     (abs)        000000
 ___fladd                 text5        000012
@@ -381,10 +381,10 @@ ___flmul@grs             cstackCOMRAM 000020
 ___flmul@prod            cstackCOMRAM 000025
 ___flmul@sign            cstackCOMRAM 00001E
 ___flmul@temp            cstackCOMRAM 000029
-___flsub                 text4        001642
+___flsub                 text4        0016BA
 ___flsub@a               cstackCOMRAM 000048
 ___flsub@b               cstackCOMRAM 000044
-___fltol                 text3        00153C
+___fltol                 text3        0015B4
 ___fltol@exp1            cstackCOMRAM 000055
 ___fltol@f1              cstackCOMRAM 00004C
 ___fltol@sign1           cstackCOMRAM 000054
@@ -395,72 +395,70 @@ ___intlo_sp              stack        000000
 ___param_bank            (abs)        000000
 ___rparam_used           (abs)        000001
 ___sp                    stack        000000
-___xxtofl                text2        001388
+___xxtofl                text2        001400
 ___xxtofl@arg            cstackCOMRAM 00000E
 ___xxtofl@exp            cstackCOMRAM 00000D
 ___xxtofl@sign           cstackCOMRAM 00000C
 ___xxtofl@val            cstackCOMRAM 000004
 __accesstop              (abs)        000060
 __activetblptr           (abs)        000000
-__end_of_ISR             intcode_body 000F0C
+__end_of_ISR             intcode_body 000F84
 __end_of___fladd         text5        0004D2
 __end_of___fldiv         text7        000C96
 __end_of___flmul         text6        0008FC
-__end_of___flsub         text4        001688
-__end_of___fltol         text3        001642
-__end_of___xxtofl        text2        00153C
-__end_of__initialization cinit        00169C
-__end_of_main            text0        001388
-__end_of_precargas       text1        001170
-__initialization         cinit        001688
+__end_of___flsub         text4        001700
+__end_of___fltol         text3        0016BA
+__end_of___xxtofl        text2        0015B4
+__end_of__initialization cinit        001714
+__end_of_main            text0        001400
+__end_of_precargas       text1        0011E8
+__initialization         cinit        001700
 __mediumconst            mediumconst  000000
 __pbssBANK0              bssBANK0     000060
 __pbssCOMRAM             bssCOMRAM    000056
-__pcinit                 cinit        001688
-__pcstackBANK0           cstackBANK0  0000F4
+__pcinit                 cinit        001700
+__pcstackBANK0           cstackBANK0  0000F0
 __pcstackCOMRAM          cstackCOMRAM 000001
 __pintcode               intcode      000008
 __pintcode_body          intcode_body 000C96
-__pnvBANK0               nvBANK0      0000D6
+__pnvBANK0               nvBANK0      0000D2
 __pnvCOMRAM              nvCOMRAM     00005A
-__ptext0                 text0        001170
-__ptext1                 text1        000F0C
-__ptext2                 text2        001388
-__ptext3                 text3        00153C
-__ptext4                 text4        001642
+__ptext0                 text0        0011E8
+__ptext1                 text1        000F84
+__ptext2                 text2        001400
+__ptext3                 text3        0015B4
+__ptext4                 text4        0016BA
 __ptext5                 text5        000012
 __ptext6                 text6        0004D2
 __ptext7                 text7        0008FC
 __ramtop                 ramtop       000800
 __smallconst             smallconst   000000
-_ac                      nvBANK0      0000E6
+_ac                      nvBANK0      0000E2
 _arrayX                  bssBANK0     000088
 _arrayY                  bssBANK0     000060
 _counter                 nvCOMRAM     00005A
 _counterVC               bssBANK0     0000BC
 _cru                     bssBANK0     0000C0
-_deltaT                  nvBANK0      0000DE
+_deltaT                  nvBANK0      0000DA
 _des                     bssBANK0     0000BE
-_flagx                   bssBANK0     0000CC
-_flagy                   bssBANK0     0000CA
-_main                    text0        001170
-_pasosX                  nvBANK0      0000EA
-_pasosXDados             bssBANK0     0000C6
-_pasosY                  nvBANK0      0000E8
-_pasosYDados             bssBANK0     0000C4
+_main                    text0        0011E8
+_pasosX                  nvBANK0      0000E6
+_pasosXDados             bssCOMRAM    000058
+_pasosY                  nvBANK0      0000E4
+_pasosYDados             bssCOMRAM    000056
 _pasosZ                  bssBANK0     0000C8
-_pasosZDados             bssBANK0     0000C2
-_precargaX               bssCOMRAM    000058
-_precargaY               bssCOMRAM    000056
-_precargas               text1        000F0C
-_v5x                     nvBANK0      0000DA
-_v5y                     nvBANK0      0000D6
-_vCx                     nvBANK0      0000F0
-_vCy                     nvBANK0      0000EC
-_vInsx                   bssBANK0     0000D2
-_vInsy                   bssBANK0     0000CE
+_pasosZDados             bssBANK0     0000C6
+_precargaX               bssBANK0     0000C4
+_precargaY               bssBANK0     0000C2
+_precargas               text1        000F84
+_v5x                     nvBANK0      0000D6
+_v5y                     nvBANK0      0000D2
+_vCx                     nvBANK0      0000EC
+_vCy                     nvBANK0      0000E8
+_vInsx                   bssBANK0     0000CE
+_vInsy                   bssBANK0     0000CA
 btemp                    temp         00005C
-end_of_initialization    cinit        00169C
+end_of_initialization    cinit        001714
 int$flags                temp         00005C
 int_func                 intcode_body 000C96
 intlevel0                text         000000
@@ -469,11 +467,11 @@ intlevel2                text         000000
 intlevel3                text         000000
 isa$std                  (abs)        000001
 isa$xinst                (abs)        000000
-precargas@i              cstackBANK0  0000F4
+precargas@i              cstackBANK0  0000F0
 stackhi                  (abs)        000000
 stacklo                  (abs)        000000
 start                    init         00000E
-start_initialization     cinit        001688
+start_initialization     cinit        001700
 ttemp5                   temp         00005D
 ttemp6                   temp         000060
 ttemp7                   temp         000064
@@ -494,30 +492,30 @@ C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\sprcdiv.c
 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\sprcdiv.c estimated size: 922
 
 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\fltol.c
-		___fltol       		CODE           	153C	0000	262
+		___fltol       		CODE           	15B4	0000	262
 
 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\fltol.c estimated size: 262
 
 aceleration.c
-		_ISR           		CODE           	0008	0000	636
-		_main          		CODE           	1170	0000	536
-		_precargas     		CODE           	0F0C	0000	612
+		_ISR           		CODE           	0008	0000	756
+		_main          		CODE           	11E8	0000	536
+		_precargas     		CODE           	0F84	0000	612
 
-aceleration.c estimated size: 1784
+aceleration.c estimated size: 1904
 
 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\sprcadd.c
-		___flsub       		CODE           	1642	0000	70
+		___flsub       		CODE           	16BA	0000	70
 		___fladd       		CODE           	0012	0000	1216
 
 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\sprcadd.c estimated size: 1286
 
 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\xxtofl.c
-		___xxtofl      		CODE           	1388	0000	436
+		___xxtofl      		CODE           	1400	0000	436
 
 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c99\common\xxtofl.c estimated size: 436
 
 shared
-		__initialization		CODE           	1688	0000	20
+		__initialization		CODE           	1700	0000	20
 
 shared estimated size: 20
 
