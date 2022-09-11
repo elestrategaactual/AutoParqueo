@@ -1,0 +1,2224 @@
+Version 4.0 HI-TECH Software Intermediate Code
+[p mainexit ]
+"27 controlMotores.c
+[; ;controlMotores.c: 27: void mover(long int x,long int y, long int z,int absoluto);
+[v _mover `(v ~T0 @X0 0 ef4`l`l`l`i ]
+"4002 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4002: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"3264
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3264: extern volatile unsigned char LATD __attribute__((address(0xF8C)));
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"10397
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10397: extern volatile __bit RBPU __attribute__((address(0x7F8F)));
+[v _RBPU `Vb ~T0 @X0 0 e@32655 ]
+"3626
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3626: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"10820
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10820: extern volatile __bit TMR0IF __attribute__((address(0x7F92)));
+[v _TMR0IF `Vb ~T0 @X0 0 e@32658 ]
+"10835
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10835: extern volatile __bit TMR1IF __attribute__((address(0x7CF0)));
+[v _TMR1IF `Vb ~T0 @X0 0 e@31984 ]
+"10862
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10862: extern volatile __bit TMR3IF __attribute__((address(0x7D09)));
+[v _TMR3IF `Vb ~T0 @X0 0 e@32009 ]
+"10817
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10817: extern volatile __bit TMR0IE __attribute__((address(0x7F95)));
+[v _TMR0IE `Vb ~T0 @X0 0 e@32661 ]
+"10832
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10832: extern volatile __bit TMR1IE __attribute__((address(0x7CE8)));
+[v _TMR1IE `Vb ~T0 @X0 0 e@31976 ]
+"10859
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10859: extern volatile __bit TMR3IE __attribute__((address(0x7D01)));
+[v _TMR3IE `Vb ~T0 @X0 0 e@32001 ]
+"7987
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7987: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
+[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
+"8070
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8070: extern volatile unsigned char T0CON __attribute__((address(0xFD5)));
+[v _T0CON `Vuc ~T0 @X0 0 e@4053 ]
+"10826
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10826: extern volatile __bit TMR0ON __attribute__((address(0x7EAF)));
+[v _TMR0ON `Vb ~T0 @X0 0 e@32431 ]
+"8140
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8140: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
+[v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
+"7416
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7416: extern volatile unsigned char T1CON __attribute__((address(0xFCD)));
+[v _T1CON `Vuc ~T0 @X0 0 e@4045 ]
+"10841
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10841: extern volatile __bit TMR1ON __attribute__((address(0x7E68)));
+[v _TMR1ON `Vb ~T0 @X0 0 e@32360 ]
+"5446
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5446: extern volatile unsigned char T3CON __attribute__((address(0xFB1)));
+[v _T3CON `Vuc ~T0 @X0 0 e@4017 ]
+"10868
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10868: extern volatile __bit TMR3ON __attribute__((address(0x7D88)));
+[v _TMR3ON `Vb ~T0 @X0 0 e@32136 ]
+"4937
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4937: extern volatile unsigned char RCSTA __attribute__((address(0xFAB)));
+[v _RCSTA `Vuc ~T0 @X0 0 e@4011 ]
+"5147
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5147: extern volatile unsigned char TXSTA __attribute__((address(0xFAC)));
+[v _TXSTA `Vuc ~T0 @X0 0 e@4012 ]
+"6063
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6063: extern volatile unsigned char BAUDCON __attribute__((address(0xFB8)));
+[v _BAUDCON `Vuc ~T0 @X0 0 e@4024 ]
+"5427
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5427: extern volatile unsigned char SPBRG __attribute__((address(0xFAF)));
+[v _SPBRG `Vuc ~T0 @X0 0 e@4015 ]
+"10451
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10451: extern volatile __bit RCIP __attribute__((address(0x7CFD)));
+[v _RCIP `Vb ~T0 @X0 0 e@31997 ]
+"10448
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10448: extern volatile __bit RCIF __attribute__((address(0x7CF5)));
+[v _RCIF `Vb ~T0 @X0 0 e@31989 ]
+"10445
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10445: extern volatile __bit RCIE __attribute__((address(0x7CED)));
+[v _RCIE `Vb ~T0 @X0 0 e@31981 ]
+"10274
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10274: extern volatile __bit PEIE __attribute__((address(0x7F96)));
+[v _PEIE `Vb ~T0 @X0 0 e@32662 ]
+"9746
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 9746: extern volatile __bit GIE __attribute__((address(0x7F97)));
+[v _GIE `Vb ~T0 @X0 0 e@32663 ]
+"26 controlMotores.c
+[; ;controlMotores.c: 26: void goHome(void);
+[v _goHome `(v ~T0 @X0 0 ef ]
+"28
+[; ;controlMotores.c: 28: void Transmitir(unsigned char dato);
+[v _Transmitir `(v ~T0 @X0 0 ef1`uc ]
+"29
+[; ;controlMotores.c: 29: void guardarV(void);
+[v _guardarV `(v ~T0 @X0 0 ef ]
+[t ~ __interrupt . k ]
+[t T37 __interrupt ]
+"5415 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5415: extern volatile unsigned char RCREG __attribute__((address(0xFAE)));
+[v _RCREG `Vuc ~T0 @X0 0 e@4014 ]
+"7519
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7519: extern volatile unsigned short TMR1 __attribute__((address(0xFCE)));
+[v _TMR1 `Vus ~T0 @X0 0 e@4046 ]
+"5567
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5567: extern volatile unsigned short TMR3 __attribute__((address(0xFB2)));
+[v _TMR3 `Vus ~T0 @X0 0 e@4018 ]
+"9992
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 9992: extern volatile __bit LATD0 __attribute__((address(0x7C60)));
+[v _LATD0 `Vb ~T0 @X0 0 e@31840 ]
+"9995
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 9995: extern volatile __bit LATD1 __attribute__((address(0x7C61)));
+[v _LATD1 `Vb ~T0 @X0 0 e@31841 ]
+"10979
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10979: extern volatile __bit TRMT __attribute__((address(0x7D61)));
+[v _TRMT `Vb ~T0 @X0 0 e@32097 ]
+"5403
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5403: extern volatile unsigned char TXREG __attribute__((address(0xFAD)));
+[v _TXREG `Vuc ~T0 @X0 0 e@4013 ]
+"9998
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 9998: extern volatile __bit LATD2 __attribute__((address(0x7C62)));
+[v _LATD2 `Vb ~T0 @X0 0 e@31842 ]
+"10001
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10001: extern volatile __bit LATD3 __attribute__((address(0x7C63)));
+[v _LATD3 `Vb ~T0 @X0 0 e@31843 ]
+"10004
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10004: extern volatile __bit LATD4 __attribute__((address(0x7C64)));
+[v _LATD4 `Vb ~T0 @X0 0 e@31844 ]
+"10007
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10007: extern volatile __bit LATD5 __attribute__((address(0x7C65)));
+[v _LATD5 `Vb ~T0 @X0 0 e@31845 ]
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\builtins.h
+[v __delay `JF192 ~T0 @X0 0 e ]
+[p i __delay ]
+[t ~ __deprecated__ ]
+[t T1 __deprecated__ ]
+"10370 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10370: extern volatile __bit __attribute__((__deprecated__)) RB2 __attribute__((address(0x7C0A)));
+[v _RB2 `Vb ~T1 @X0 0 e@31754 ]
+[t T1 __deprecated__ ]
+"10364
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10364: extern volatile __bit __attribute__((__deprecated__)) RB0 __attribute__((address(0x7C08)));
+[v _RB0 `Vb ~T1 @X0 0 e@31752 ]
+[t T1 __deprecated__ ]
+"10367
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 10367: extern volatile __bit __attribute__((__deprecated__)) RB1 __attribute__((address(0x7C09)));
+[v _RB1 `Vb ~T1 @X0 0 e@31753 ]
+"55 C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 55: __asm("SPPDATA equ 0F62h");
+[; <" SPPDATA equ 0F62h ;# ">
+"75
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 75: __asm("SPPCFG equ 0F63h");
+[; <" SPPCFG equ 0F63h ;# ">
+"152
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 152: __asm("SPPEPS equ 0F64h");
+[; <" SPPEPS equ 0F64h ;# ">
+"226
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 226: __asm("SPPCON equ 0F65h");
+[; <" SPPCON equ 0F65h ;# ">
+"252
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 252: __asm("UFRM equ 0F66h");
+[; <" UFRM equ 0F66h ;# ">
+"259
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 259: __asm("UFRML equ 0F66h");
+[; <" UFRML equ 0F66h ;# ">
+"337
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 337: __asm("UFRMH equ 0F67h");
+[; <" UFRMH equ 0F67h ;# ">
+"377
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 377: __asm("UIR equ 0F68h");
+[; <" UIR equ 0F68h ;# ">
+"433
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 433: __asm("UIE equ 0F69h");
+[; <" UIE equ 0F69h ;# ">
+"489
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 489: __asm("UEIR equ 0F6Ah");
+[; <" UEIR equ 0F6Ah ;# ">
+"540
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 540: __asm("UEIE equ 0F6Bh");
+[; <" UEIE equ 0F6Bh ;# ">
+"591
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 591: __asm("USTAT equ 0F6Ch");
+[; <" USTAT equ 0F6Ch ;# ">
+"651
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 651: __asm("UCON equ 0F6Dh");
+[; <" UCON equ 0F6Dh ;# ">
+"702
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 702: __asm("UADDR equ 0F6Eh");
+[; <" UADDR equ 0F6Eh ;# ">
+"766
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 766: __asm("UCFG equ 0F6Fh");
+[; <" UCFG equ 0F6Fh ;# ">
+"845
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 845: __asm("UEP0 equ 0F70h");
+[; <" UEP0 equ 0F70h ;# ">
+"953
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 953: __asm("UEP1 equ 0F71h");
+[; <" UEP1 equ 0F71h ;# ">
+"1061
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 1061: __asm("UEP2 equ 0F72h");
+[; <" UEP2 equ 0F72h ;# ">
+"1169
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 1169: __asm("UEP3 equ 0F73h");
+[; <" UEP3 equ 0F73h ;# ">
+"1277
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 1277: __asm("UEP4 equ 0F74h");
+[; <" UEP4 equ 0F74h ;# ">
+"1385
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 1385: __asm("UEP5 equ 0F75h");
+[; <" UEP5 equ 0F75h ;# ">
+"1493
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 1493: __asm("UEP6 equ 0F76h");
+[; <" UEP6 equ 0F76h ;# ">
+"1601
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 1601: __asm("UEP7 equ 0F77h");
+[; <" UEP7 equ 0F77h ;# ">
+"1709
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 1709: __asm("UEP8 equ 0F78h");
+[; <" UEP8 equ 0F78h ;# ">
+"1785
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 1785: __asm("UEP9 equ 0F79h");
+[; <" UEP9 equ 0F79h ;# ">
+"1861
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 1861: __asm("UEP10 equ 0F7Ah");
+[; <" UEP10 equ 0F7Ah ;# ">
+"1937
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 1937: __asm("UEP11 equ 0F7Bh");
+[; <" UEP11 equ 0F7Bh ;# ">
+"2013
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 2013: __asm("UEP12 equ 0F7Ch");
+[; <" UEP12 equ 0F7Ch ;# ">
+"2089
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 2089: __asm("UEP13 equ 0F7Dh");
+[; <" UEP13 equ 0F7Dh ;# ">
+"2165
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 2165: __asm("UEP14 equ 0F7Eh");
+[; <" UEP14 equ 0F7Eh ;# ">
+"2241
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 2241: __asm("UEP15 equ 0F7Fh");
+[; <" UEP15 equ 0F7Fh ;# ">
+"2317
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 2317: __asm("PORTA equ 0F80h");
+[; <" PORTA equ 0F80h ;# ">
+"2456
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 2456: __asm("PORTB equ 0F81h");
+[; <" PORTB equ 0F81h ;# ">
+"2566
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 2566: __asm("PORTC equ 0F82h");
+[; <" PORTC equ 0F82h ;# ">
+"2708
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 2708: __asm("PORTD equ 0F83h");
+[; <" PORTD equ 0F83h ;# ">
+"2829
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 2829: __asm("PORTE equ 0F84h");
+[; <" PORTE equ 0F84h ;# ">
+"2976
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 2976: __asm("LATA equ 0F89h");
+[; <" LATA equ 0F89h ;# ">
+"3076
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3076: __asm("LATB equ 0F8Ah");
+[; <" LATB equ 0F8Ah ;# ">
+"3188
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3188: __asm("LATC equ 0F8Bh");
+[; <" LATC equ 0F8Bh ;# ">
+"3266
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3266: __asm("LATD equ 0F8Ch");
+[; <" LATD equ 0F8Ch ;# ">
+"3378
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3378: __asm("LATE equ 0F8Dh");
+[; <" LATE equ 0F8Dh ;# ">
+"3430
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3430: __asm("TRISA equ 0F92h");
+[; <" TRISA equ 0F92h ;# ">
+"3435
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3435: __asm("DDRA equ 0F92h");
+[; <" DDRA equ 0F92h ;# ">
+"3628
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3628: __asm("TRISB equ 0F93h");
+[; <" TRISB equ 0F93h ;# ">
+"3633
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3633: __asm("DDRB equ 0F93h");
+[; <" DDRB equ 0F93h ;# ">
+"3850
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3850: __asm("TRISC equ 0F94h");
+[; <" TRISC equ 0F94h ;# ">
+"3855
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 3855: __asm("DDRC equ 0F94h");
+[; <" DDRC equ 0F94h ;# ">
+"4004
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4004: __asm("TRISD equ 0F95h");
+[; <" TRISD equ 0F95h ;# ">
+"4009
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4009: __asm("DDRD equ 0F95h");
+[; <" DDRD equ 0F95h ;# ">
+"4226
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4226: __asm("TRISE equ 0F96h");
+[; <" TRISE equ 0F96h ;# ">
+"4231
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4231: __asm("DDRE equ 0F96h");
+[; <" DDRE equ 0F96h ;# ">
+"4328
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4328: __asm("OSCTUNE equ 0F9Bh");
+[; <" OSCTUNE equ 0F9Bh ;# ">
+"4387
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4387: __asm("PIE1 equ 0F9Dh");
+[; <" PIE1 equ 0F9Dh ;# ">
+"4471
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4471: __asm("PIR1 equ 0F9Eh");
+[; <" PIR1 equ 0F9Eh ;# ">
+"4555
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4555: __asm("IPR1 equ 0F9Fh");
+[; <" IPR1 equ 0F9Fh ;# ">
+"4639
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4639: __asm("PIE2 equ 0FA0h");
+[; <" PIE2 equ 0FA0h ;# ">
+"4710
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4710: __asm("PIR2 equ 0FA1h");
+[; <" PIR2 equ 0FA1h ;# ">
+"4781
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4781: __asm("IPR2 equ 0FA2h");
+[; <" IPR2 equ 0FA2h ;# ">
+"4852
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4852: __asm("EECON1 equ 0FA6h");
+[; <" EECON1 equ 0FA6h ;# ">
+"4918
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4918: __asm("EECON2 equ 0FA7h");
+[; <" EECON2 equ 0FA7h ;# ">
+"4925
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4925: __asm("EEDATA equ 0FA8h");
+[; <" EEDATA equ 0FA8h ;# ">
+"4932
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4932: __asm("EEADR equ 0FA9h");
+[; <" EEADR equ 0FA9h ;# ">
+"4939
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4939: __asm("RCSTA equ 0FABh");
+[; <" RCSTA equ 0FABh ;# ">
+"4944
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 4944: __asm("RCSTA1 equ 0FABh");
+[; <" RCSTA1 equ 0FABh ;# ">
+"5149
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5149: __asm("TXSTA equ 0FACh");
+[; <" TXSTA equ 0FACh ;# ">
+"5154
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5154: __asm("TXSTA1 equ 0FACh");
+[; <" TXSTA1 equ 0FACh ;# ">
+"5405
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5405: __asm("TXREG equ 0FADh");
+[; <" TXREG equ 0FADh ;# ">
+"5410
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5410: __asm("TXREG1 equ 0FADh");
+[; <" TXREG1 equ 0FADh ;# ">
+"5417
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5417: __asm("RCREG equ 0FAEh");
+[; <" RCREG equ 0FAEh ;# ">
+"5422
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5422: __asm("RCREG1 equ 0FAEh");
+[; <" RCREG1 equ 0FAEh ;# ">
+"5429
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5429: __asm("SPBRG equ 0FAFh");
+[; <" SPBRG equ 0FAFh ;# ">
+"5434
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5434: __asm("SPBRG1 equ 0FAFh");
+[; <" SPBRG1 equ 0FAFh ;# ">
+"5441
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5441: __asm("SPBRGH equ 0FB0h");
+[; <" SPBRGH equ 0FB0h ;# ">
+"5448
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5448: __asm("T3CON equ 0FB1h");
+[; <" T3CON equ 0FB1h ;# ">
+"5569
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5569: __asm("TMR3 equ 0FB2h");
+[; <" TMR3 equ 0FB2h ;# ">
+"5576
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5576: __asm("TMR3L equ 0FB2h");
+[; <" TMR3L equ 0FB2h ;# ">
+"5583
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5583: __asm("TMR3H equ 0FB3h");
+[; <" TMR3H equ 0FB3h ;# ">
+"5590
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5590: __asm("CMCON equ 0FB4h");
+[; <" CMCON equ 0FB4h ;# ">
+"5680
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5680: __asm("CVRCON equ 0FB5h");
+[; <" CVRCON equ 0FB5h ;# ">
+"5765
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5765: __asm("ECCP1AS equ 0FB6h");
+[; <" ECCP1AS equ 0FB6h ;# ">
+"5770
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5770: __asm("CCP1AS equ 0FB6h");
+[; <" CCP1AS equ 0FB6h ;# ">
+"5927
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5927: __asm("ECCP1DEL equ 0FB7h");
+[; <" ECCP1DEL equ 0FB7h ;# ">
+"5932
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 5932: __asm("CCP1DEL equ 0FB7h");
+[; <" CCP1DEL equ 0FB7h ;# ">
+"6065
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6065: __asm("BAUDCON equ 0FB8h");
+[; <" BAUDCON equ 0FB8h ;# ">
+"6070
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6070: __asm("BAUDCTL equ 0FB8h");
+[; <" BAUDCTL equ 0FB8h ;# ">
+"6245
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6245: __asm("CCP2CON equ 0FBAh");
+[; <" CCP2CON equ 0FBAh ;# ">
+"6309
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6309: __asm("CCPR2 equ 0FBBh");
+[; <" CCPR2 equ 0FBBh ;# ">
+"6316
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6316: __asm("CCPR2L equ 0FBBh");
+[; <" CCPR2L equ 0FBBh ;# ">
+"6323
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6323: __asm("CCPR2H equ 0FBCh");
+[; <" CCPR2H equ 0FBCh ;# ">
+"6330
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6330: __asm("CCP1CON equ 0FBDh");
+[; <" CCP1CON equ 0FBDh ;# ">
+"6335
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6335: __asm("ECCP1CON equ 0FBDh");
+[; <" ECCP1CON equ 0FBDh ;# ">
+"6492
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6492: __asm("CCPR1 equ 0FBEh");
+[; <" CCPR1 equ 0FBEh ;# ">
+"6499
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6499: __asm("CCPR1L equ 0FBEh");
+[; <" CCPR1L equ 0FBEh ;# ">
+"6506
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6506: __asm("CCPR1H equ 0FBFh");
+[; <" CCPR1H equ 0FBFh ;# ">
+"6513
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6513: __asm("ADCON2 equ 0FC0h");
+[; <" ADCON2 equ 0FC0h ;# ">
+"6584
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6584: __asm("ADCON1 equ 0FC1h");
+[; <" ADCON1 equ 0FC1h ;# ">
+"6669
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6669: __asm("ADCON0 equ 0FC2h");
+[; <" ADCON0 equ 0FC2h ;# ">
+"6788
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6788: __asm("ADRES equ 0FC3h");
+[; <" ADRES equ 0FC3h ;# ">
+"6795
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6795: __asm("ADRESL equ 0FC3h");
+[; <" ADRESL equ 0FC3h ;# ">
+"6802
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6802: __asm("ADRESH equ 0FC4h");
+[; <" ADRESH equ 0FC4h ;# ">
+"6809
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6809: __asm("SSPCON2 equ 0FC5h");
+[; <" SSPCON2 equ 0FC5h ;# ">
+"6871
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6871: __asm("SSPCON1 equ 0FC6h");
+[; <" SSPCON1 equ 0FC6h ;# ">
+"6941
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 6941: __asm("SSPSTAT equ 0FC7h");
+[; <" SSPSTAT equ 0FC7h ;# ">
+"7189
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7189: __asm("SSPADD equ 0FC8h");
+[; <" SSPADD equ 0FC8h ;# ">
+"7196
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7196: __asm("SSPBUF equ 0FC9h");
+[; <" SSPBUF equ 0FC9h ;# ">
+"7203
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7203: __asm("T2CON equ 0FCAh");
+[; <" T2CON equ 0FCAh ;# ">
+"7301
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7301: __asm("PR2 equ 0FCBh");
+[; <" PR2 equ 0FCBh ;# ">
+"7306
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7306: __asm("MEMCON equ 0FCBh");
+[; <" MEMCON equ 0FCBh ;# ">
+"7411
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7411: __asm("TMR2 equ 0FCCh");
+[; <" TMR2 equ 0FCCh ;# ">
+"7418
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7418: __asm("T1CON equ 0FCDh");
+[; <" T1CON equ 0FCDh ;# ">
+"7521
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7521: __asm("TMR1 equ 0FCEh");
+[; <" TMR1 equ 0FCEh ;# ">
+"7528
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7528: __asm("TMR1L equ 0FCEh");
+[; <" TMR1L equ 0FCEh ;# ">
+"7535
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7535: __asm("TMR1H equ 0FCFh");
+[; <" TMR1H equ 0FCFh ;# ">
+"7542
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7542: __asm("RCON equ 0FD0h");
+[; <" RCON equ 0FD0h ;# ">
+"7691
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7691: __asm("WDTCON equ 0FD1h");
+[; <" WDTCON equ 0FD1h ;# ">
+"7719
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7719: __asm("HLVDCON equ 0FD2h");
+[; <" HLVDCON equ 0FD2h ;# ">
+"7724
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7724: __asm("LVDCON equ 0FD2h");
+[; <" LVDCON equ 0FD2h ;# ">
+"7989
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 7989: __asm("OSCCON equ 0FD3h");
+[; <" OSCCON equ 0FD3h ;# ">
+"8072
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8072: __asm("T0CON equ 0FD5h");
+[; <" T0CON equ 0FD5h ;# ">
+"8142
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8142: __asm("TMR0 equ 0FD6h");
+[; <" TMR0 equ 0FD6h ;# ">
+"8149
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8149: __asm("TMR0L equ 0FD6h");
+[; <" TMR0L equ 0FD6h ;# ">
+"8156
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8156: __asm("TMR0H equ 0FD7h");
+[; <" TMR0H equ 0FD7h ;# ">
+"8163
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8163: __asm("STATUS equ 0FD8h");
+[; <" STATUS equ 0FD8h ;# ">
+"8234
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8234: __asm("FSR2 equ 0FD9h");
+[; <" FSR2 equ 0FD9h ;# ">
+"8241
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8241: __asm("FSR2L equ 0FD9h");
+[; <" FSR2L equ 0FD9h ;# ">
+"8248
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8248: __asm("FSR2H equ 0FDAh");
+[; <" FSR2H equ 0FDAh ;# ">
+"8255
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8255: __asm("PLUSW2 equ 0FDBh");
+[; <" PLUSW2 equ 0FDBh ;# ">
+"8262
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8262: __asm("PREINC2 equ 0FDCh");
+[; <" PREINC2 equ 0FDCh ;# ">
+"8269
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8269: __asm("POSTDEC2 equ 0FDDh");
+[; <" POSTDEC2 equ 0FDDh ;# ">
+"8276
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8276: __asm("POSTINC2 equ 0FDEh");
+[; <" POSTINC2 equ 0FDEh ;# ">
+"8283
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8283: __asm("INDF2 equ 0FDFh");
+[; <" INDF2 equ 0FDFh ;# ">
+"8290
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8290: __asm("BSR equ 0FE0h");
+[; <" BSR equ 0FE0h ;# ">
+"8297
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8297: __asm("FSR1 equ 0FE1h");
+[; <" FSR1 equ 0FE1h ;# ">
+"8304
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8304: __asm("FSR1L equ 0FE1h");
+[; <" FSR1L equ 0FE1h ;# ">
+"8311
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8311: __asm("FSR1H equ 0FE2h");
+[; <" FSR1H equ 0FE2h ;# ">
+"8318
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8318: __asm("PLUSW1 equ 0FE3h");
+[; <" PLUSW1 equ 0FE3h ;# ">
+"8325
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8325: __asm("PREINC1 equ 0FE4h");
+[; <" PREINC1 equ 0FE4h ;# ">
+"8332
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8332: __asm("POSTDEC1 equ 0FE5h");
+[; <" POSTDEC1 equ 0FE5h ;# ">
+"8339
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8339: __asm("POSTINC1 equ 0FE6h");
+[; <" POSTINC1 equ 0FE6h ;# ">
+"8346
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8346: __asm("INDF1 equ 0FE7h");
+[; <" INDF1 equ 0FE7h ;# ">
+"8353
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8353: __asm("WREG equ 0FE8h");
+[; <" WREG equ 0FE8h ;# ">
+"8360
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8360: __asm("FSR0 equ 0FE9h");
+[; <" FSR0 equ 0FE9h ;# ">
+"8367
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8367: __asm("FSR0L equ 0FE9h");
+[; <" FSR0L equ 0FE9h ;# ">
+"8374
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8374: __asm("FSR0H equ 0FEAh");
+[; <" FSR0H equ 0FEAh ;# ">
+"8381
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8381: __asm("PLUSW0 equ 0FEBh");
+[; <" PLUSW0 equ 0FEBh ;# ">
+"8388
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8388: __asm("PREINC0 equ 0FECh");
+[; <" PREINC0 equ 0FECh ;# ">
+"8395
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8395: __asm("POSTDEC0 equ 0FEDh");
+[; <" POSTDEC0 equ 0FEDh ;# ">
+"8402
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8402: __asm("POSTINC0 equ 0FEEh");
+[; <" POSTINC0 equ 0FEEh ;# ">
+"8409
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8409: __asm("INDF0 equ 0FEFh");
+[; <" INDF0 equ 0FEFh ;# ">
+"8416
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8416: __asm("INTCON3 equ 0FF0h");
+[; <" INTCON3 equ 0FF0h ;# ">
+"8508
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8508: __asm("INTCON2 equ 0FF1h");
+[; <" INTCON2 equ 0FF1h ;# ">
+"8585
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8585: __asm("INTCON equ 0FF2h");
+[; <" INTCON equ 0FF2h ;# ">
+"8702
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8702: __asm("PROD equ 0FF3h");
+[; <" PROD equ 0FF3h ;# ">
+"8709
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8709: __asm("PRODL equ 0FF3h");
+[; <" PRODL equ 0FF3h ;# ">
+"8716
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8716: __asm("PRODH equ 0FF4h");
+[; <" PRODH equ 0FF4h ;# ">
+"8723
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8723: __asm("TABLAT equ 0FF5h");
+[; <" TABLAT equ 0FF5h ;# ">
+"8732
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8732: __asm("TBLPTR equ 0FF6h");
+[; <" TBLPTR equ 0FF6h ;# ">
+"8739
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8739: __asm("TBLPTRL equ 0FF6h");
+[; <" TBLPTRL equ 0FF6h ;# ">
+"8746
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8746: __asm("TBLPTRH equ 0FF7h");
+[; <" TBLPTRH equ 0FF7h ;# ">
+"8753
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8753: __asm("TBLPTRU equ 0FF8h");
+[; <" TBLPTRU equ 0FF8h ;# ">
+"8762
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8762: __asm("PCLAT equ 0FF9h");
+[; <" PCLAT equ 0FF9h ;# ">
+"8769
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8769: __asm("PC equ 0FF9h");
+[; <" PC equ 0FF9h ;# ">
+"8776
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8776: __asm("PCL equ 0FF9h");
+[; <" PCL equ 0FF9h ;# ">
+"8783
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8783: __asm("PCLATH equ 0FFAh");
+[; <" PCLATH equ 0FFAh ;# ">
+"8790
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8790: __asm("PCLATU equ 0FFBh");
+[; <" PCLATU equ 0FFBh ;# ">
+"8797
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8797: __asm("STKPTR equ 0FFCh");
+[; <" STKPTR equ 0FFCh ;# ">
+"8873
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8873: __asm("TOS equ 0FFDh");
+[; <" TOS equ 0FFDh ;# ">
+"8880
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8880: __asm("TOSL equ 0FFDh");
+[; <" TOSL equ 0FFDh ;# ">
+"8887
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8887: __asm("TOSH equ 0FFEh");
+[; <" TOSH equ 0FFEh ;# ">
+"8894
+[; ;C:/Program Files/Microchip/MPLABX/v6.00/packs/Microchip/PIC18Fxxxx_DFP/1.3.36/xc8\pic\include\proc\pic18f4550.h: 8894: __asm("TOSU equ 0FFFh");
+[; <" TOSU equ 0FFFh ;# ">
+"8 controlMotores.c
+[p x FOSC=INTOSC_EC ]
+"10
+[p x WDT  =  OFF ]
+"11
+[p x PBADEN  =  OFF ]
+"12
+[p x LVP=OFF ]
+"31
+[; ;controlMotores.c: 31: const int tDelay = 400;
+[v _tDelay `Ci ~T0 @X0 1 e ]
+[i _tDelay
+-> 400 `i
+]
+"32
+[; ;controlMotores.c: 32: unsigned int pasosX,pasosY,pasosZ;
+[v _pasosX `ui ~T0 @X0 1 e ]
+[v _pasosY `ui ~T0 @X0 1 e ]
+[v _pasosZ `ui ~T0 @X0 1 e ]
+"33
+[; ;controlMotores.c: 33: unsigned int pasosXDados,pasosYDados,pasosZDados;
+[v _pasosXDados `ui ~T0 @X0 1 e ]
+[v _pasosYDados `ui ~T0 @X0 1 e ]
+[v _pasosZDados `ui ~T0 @X0 1 e ]
+"34
+[; ;controlMotores.c: 34: float Ta;
+[v _Ta `f ~T0 @X0 1 e ]
+"35
+[; ;controlMotores.c: 35: float deltaT;
+[v _deltaT `f ~T0 @X0 1 e ]
+"36
+[; ;controlMotores.c: 36: float vCx,vCy;
+[v _vCx `f ~T0 @X0 1 e ]
+[v _vCy `f ~T0 @X0 1 e ]
+"37
+[; ;controlMotores.c: 37: float vInsx,vInsy;
+[v _vInsx `f ~T0 @X0 1 e ]
+[v _vInsy `f ~T0 @X0 1 e ]
+"38
+[; ;controlMotores.c: 38: float TIntx,TInty;
+[v _TIntx `f ~T0 @X0 1 e ]
+[v _TInty `f ~T0 @X0 1 e ]
+"39
+[; ;controlMotores.c: 39: float v5x,v5y;
+[v _v5x `f ~T0 @X0 1 e ]
+[v _v5y `f ~T0 @X0 1 e ]
+"40
+[; ;controlMotores.c: 40: unsigned int precargaX,precargaY;
+[v _precargaX `ui ~T0 @X0 1 e ]
+[v _precargaY `ui ~T0 @X0 1 e ]
+"41
+[; ;controlMotores.c: 41: float TvC;
+[v _TvC `f ~T0 @X0 1 e ]
+"42
+[; ;controlMotores.c: 42: int ac,cru,des;
+[v _ac `i ~T0 @X0 1 e ]
+[v _cru `i ~T0 @X0 1 e ]
+[v _des `i ~T0 @X0 1 e ]
+"43
+[; ;controlMotores.c: 43: int finX,finY,finZ;
+[v _finX `i ~T0 @X0 1 e ]
+[v _finY `i ~T0 @X0 1 e ]
+[v _finZ `i ~T0 @X0 1 e ]
+"44
+[; ;controlMotores.c: 44: int counter,counterVC;
+[v _counter `i ~T0 @X0 1 e ]
+[v _counterVC `i ~T0 @X0 1 e ]
+"45
+[; ;controlMotores.c: 45: unsigned int arrayX[20];
+[v _arrayX `ui ~T0 @X0 -> 20 `i e ]
+"46
+[; ;controlMotores.c: 46: unsigned int arrayY[20];
+[v _arrayY `ui ~T0 @X0 -> 20 `i e ]
+[v F3244 `ui ~T0 @X0 -> 2 `i t ]
+"47
+[; ;controlMotores.c: 47: unsigned int posiciones[11][2]={{0,0},
+[v _posiciones `F3244 ~T0 @X0 -> 11 `i e ]
+[i _posiciones
+:U ..
+:U ..
+-> -> 0 `i `ui
+-> -> 0 `i `ui
+..
+:U ..
+-> -> 0 `i `ui
+-> -> 15600 `i `ui
+..
+:U ..
+-> -> 8700 `i `ui
+-> -> 15600 `i `ui
+..
+:U ..
+-> -> 17600 `i `ui
+-> -> 15600 `i `ui
+..
+:U ..
+-> -> 0 `i `ui
+-> -> 11600 `i `ui
+..
+:U ..
+-> -> 8700 `i `ui
+-> -> 11600 `i `ui
+..
+:U ..
+-> -> 17600 `i `ui
+-> -> 11600 `i `ui
+..
+:U ..
+-> -> 0 `i `ui
+-> -> 7600 `i `ui
+..
+:U ..
+-> -> 8700 `i `ui
+-> -> 7600 `i `ui
+..
+:U ..
+-> -> 17600 `i `ui
+-> -> 7600 `i `ui
+..
+:U ..
+-> -> 8700 `i `ui
+-> -> 19500 `i `ui
+..
+..
+]
+"58
+[; ;controlMotores.c: 58: unsigned int posX,posY,posZ,carro,vactual,vs;
+[v _posX `ui ~T0 @X0 1 e ]
+[v _posY `ui ~T0 @X0 1 e ]
+[v _posZ `ui ~T0 @X0 1 e ]
+[v _carro `ui ~T0 @X0 1 e ]
+[v _vactual `ui ~T0 @X0 1 e ]
+[v _vs `ui ~T0 @X0 1 e ]
+"59
+[; ;controlMotores.c: 59: unsigned char orden,estado,ope;
+[v _orden `uc ~T0 @X0 1 e ]
+[v _estado `uc ~T0 @X0 1 e ]
+[v _ope `uc ~T0 @X0 1 e ]
+[v $root$_main `(v ~T0 @X0 0 e ]
+"61
+[; ;controlMotores.c: 61: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
+"63
+[; ;controlMotores.c: 63:     Ta = 4.5;
+[e = _Ta -> .4.5 `f ]
+"64
+[; ;controlMotores.c: 64:     deltaT = Ta/20;
+[e = _deltaT / _Ta -> -> 20 `i `f ]
+"66
+[; ;controlMotores.c: 66:     mover(posiciones[9][0],posiciones[9][1],0,0);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 0 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 0 `i `l -> 0 `i ]
+"69
+[; ;controlMotores.c: 69:     TRISD = 0b111000000;
+[e = _TRISD -> -> 448 `i `uc ]
+"70
+[; ;controlMotores.c: 70:     LATD = 0;
+[e = _LATD -> -> 0 `i `uc ]
+"71
+[; ;controlMotores.c: 71:     RBPU=0;
+[e = _RBPU -> -> 0 `i `b ]
+"78
+[; ;controlMotores.c: 78:     TRISB = 0b11111111;
+[e = _TRISB -> -> 255 `i `uc ]
+"81
+[; ;controlMotores.c: 81:     TMR0IF = 0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"82
+[; ;controlMotores.c: 82:     TMR1IF = 0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"83
+[; ;controlMotores.c: 83:     TMR3IF = 0;
+[e = _TMR3IF -> -> 0 `i `b ]
+"86
+[; ;controlMotores.c: 86:     TMR0IE = 1;
+[e = _TMR0IE -> -> 1 `i `b ]
+"87
+[; ;controlMotores.c: 87:     TMR1IE = 1;
+[e = _TMR1IE -> -> 1 `i `b ]
+"88
+[; ;controlMotores.c: 88:     TMR3IE = 1;
+[e = _TMR3IE -> -> 1 `i `b ]
+"91
+[; ;controlMotores.c: 91:     OSCCON=0b01110000;
+[e = _OSCCON -> -> 112 `i `uc ]
+"95
+[; ;controlMotores.c: 95:     T0CON = 0b00000010;
+[e = _T0CON -> -> 2 `i `uc ]
+"96
+[; ;controlMotores.c: 96:     TMR0ON = 0;
+[e = _TMR0ON -> -> 0 `i `b ]
+"97
+[; ;controlMotores.c: 97:     TMR0 =9286;
+[e = _TMR0 -> -> 9286 `i `us ]
+"100
+[; ;controlMotores.c: 100:     T1CON = 0b10100000;
+[e = _T1CON -> -> 160 `i `uc ]
+"101
+[; ;controlMotores.c: 101:     TMR1ON = 0;
+[e = _TMR1ON -> -> 0 `i `b ]
+"104
+[; ;controlMotores.c: 104:     T3CON = 0b10100000;
+[e = _T3CON -> -> 160 `i `uc ]
+"105
+[; ;controlMotores.c: 105:     TMR3ON = 0;
+[e = _TMR3ON -> -> 0 `i `b ]
+"108
+[; ;controlMotores.c: 108:     RCSTA=0b10010000;
+[e = _RCSTA -> -> 144 `i `uc ]
+"109
+[; ;controlMotores.c: 109:     TXSTA=0b00100000;
+[e = _TXSTA -> -> 32 `i `uc ]
+"110
+[; ;controlMotores.c: 110:     BAUDCON=0b00000000;
+[e = _BAUDCON -> -> 0 `i `uc ]
+"111
+[; ;controlMotores.c: 111:     SPBRG=12;
+[e = _SPBRG -> -> 12 `i `uc ]
+"114
+[; ;controlMotores.c: 114:     RCIP=1;
+[e = _RCIP -> -> 1 `i `b ]
+"115
+[; ;controlMotores.c: 115:     RCIF=0;
+[e = _RCIF -> -> 0 `i `b ]
+"116
+[; ;controlMotores.c: 116:     RCIE=1;
+[e = _RCIE -> -> 1 `i `b ]
+"119
+[; ;controlMotores.c: 119:     PEIE = 1;
+[e = _PEIE -> -> 1 `i `b ]
+"122
+[; ;controlMotores.c: 122:     GIE = 1;
+[e = _GIE -> -> 1 `i `b ]
+"125
+[; ;controlMotores.c: 125:     goHome();
+[e ( _goHome ..  ]
+"127
+[; ;controlMotores.c: 127:     while(1){
+[e :U 369 ]
+{
+"128
+[; ;controlMotores.c: 128:         if(ope=="H"){
+[e $ ! == -> -> _ope `i `*uc :s 1C 371  ]
+{
+"129
+[; ;controlMotores.c: 129:             Transmitir('o');
+[e ( _Transmitir (1 -> -> 111 `ui `uc ]
+"130
+[; ;controlMotores.c: 130:             if(vactual!=0)guardarV();
+[e $ ! != _vactual -> -> 0 `i `ui 372  ]
+[e ( _guardarV ..  ]
+[e :U 372 ]
+"131
+[; ;controlMotores.c: 131:             goHome();
+[e ( _goHome ..  ]
+"132
+[; ;controlMotores.c: 132:             Transmitir('e');
+[e ( _Transmitir (1 -> -> 101 `ui `uc ]
+"133
+[; ;controlMotores.c: 133:         }
+}
+[e :U 371 ]
+"134
+[; ;controlMotores.c: 134:         if(ope=="G"){
+[e $ ! == -> -> _ope `i `*uc :s 2C 373  ]
+{
+"135
+[; ;controlMotores.c: 135:             Transmitir('o');
+[e ( _Transmitir (1 -> -> 111 `ui `uc ]
+"136
+[; ;controlMotores.c: 136:             guardarV();
+[e ( _guardarV ..  ]
+"137
+[; ;controlMotores.c: 137:             ope="0";
+[e = _ope -> :s 3C `uc ]
+"138
+[; ;controlMotores.c: 138:             Transmitir('e');
+[e ( _Transmitir (1 -> -> 101 `ui `uc ]
+"139
+[; ;controlMotores.c: 139:         }
+}
+[e :U 373 ]
+"140
+[; ;controlMotores.c: 140:         if(ope=="S"){
+[e $ ! == -> -> _ope `i `*uc :s 4C 374  ]
+{
+"141
+[; ;controlMotores.c: 141:             Transmitir('o');
+[e ( _Transmitir (1 -> -> 111 `ui `uc ]
+"142
+[; ;controlMotores.c: 142:             guardarV();
+[e ( _guardarV ..  ]
+"143
+[; ;controlMotores.c: 143:             ope="0";
+[e = _ope -> :s 5C `uc ]
+"144
+[; ;controlMotores.c: 144:             Transmitir('e');
+[e ( _Transmitir (1 -> -> 101 `ui `uc ]
+"145
+[; ;controlMotores.c: 145:         }
+}
+[e :U 374 ]
+"146
+[; ;controlMotores.c: 146:     }
+}
+[e :U 368 ]
+[e $U 369  ]
+[e :U 370 ]
+"147
+[; ;controlMotores.c: 147: }
+[e :UE 367 ]
+}
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"149
+[; ;controlMotores.c: 149: void __attribute__((picinterrupt(("")))) ISR(void){
+[v _ISR `(v ~T37 @X0 1 ef ]
+{
+[e :U _ISR ]
+[f ]
+"150
+[; ;controlMotores.c: 150:     if(RCIF==1){
+[e $ ! == -> _RCIF `i -> 1 `i 376  ]
+{
+"151
+[; ;controlMotores.c: 151:         orden=RCREG;
+[e = _orden _RCREG ]
+"152
+[; ;controlMotores.c: 152:        if(estado=="e"){
+[e $ ! == -> -> _estado `i `*uc :s 6C 377  ]
+{
+"153
+[; ;controlMotores.c: 153:             if(orden=='1')carro=1;
+[e $ ! == -> _orden `ui -> 49 `ui 378  ]
+[e = _carro -> -> 1 `i `ui ]
+[e :U 378 ]
+"154
+[; ;controlMotores.c: 154:             if(orden=='2')carro=2;
+[e $ ! == -> _orden `ui -> 50 `ui 379  ]
+[e = _carro -> -> 2 `i `ui ]
+[e :U 379 ]
+"155
+[; ;controlMotores.c: 155:             if(orden=='3')carro=3;
+[e $ ! == -> _orden `ui -> 51 `ui 380  ]
+[e = _carro -> -> 3 `i `ui ]
+[e :U 380 ]
+"156
+[; ;controlMotores.c: 156:             if(orden=='4')carro=4;
+[e $ ! == -> _orden `ui -> 52 `ui 381  ]
+[e = _carro -> -> 4 `i `ui ]
+[e :U 381 ]
+"157
+[; ;controlMotores.c: 157:             if(orden=='5')carro=5;
+[e $ ! == -> _orden `ui -> 53 `ui 382  ]
+[e = _carro -> -> 5 `i `ui ]
+[e :U 382 ]
+"158
+[; ;controlMotores.c: 158:             if(orden=='6')carro=6;
+[e $ ! == -> _orden `ui -> 54 `ui 383  ]
+[e = _carro -> -> 6 `i `ui ]
+[e :U 383 ]
+"159
+[; ;controlMotores.c: 159:             if(orden=='7')carro=7;
+[e $ ! == -> _orden `ui -> 55 `ui 384  ]
+[e = _carro -> -> 7 `i `ui ]
+[e :U 384 ]
+"160
+[; ;controlMotores.c: 160:             if(orden=='8')carro=8;
+[e $ ! == -> _orden `ui -> 56 `ui 385  ]
+[e = _carro -> -> 8 `i `ui ]
+[e :U 385 ]
+"161
+[; ;controlMotores.c: 161:             if(orden=='9')carro=9;
+[e $ ! == -> _orden `ui -> 57 `ui 386  ]
+[e = _carro -> -> 9 `i `ui ]
+[e :U 386 ]
+"162
+[; ;controlMotores.c: 162:             if(orden=='G'||orden=='g')ope="G";
+[e $ ! || == -> _orden `ui -> 71 `ui == -> _orden `ui -> 103 `ui 387  ]
+[e = _ope -> :s 7C `uc ]
+[e :U 387 ]
+"163
+[; ;controlMotores.c: 163:             if(orden=='S'||orden=='s')ope="S";
+[e $ ! || == -> _orden `ui -> 83 `ui == -> _orden `ui -> 115 `ui 388  ]
+[e = _ope -> :s 8C `uc ]
+[e :U 388 ]
+"164
+[; ;controlMotores.c: 164:             if(orden=='H'||orden=='h')ope="H";
+[e $ ! || == -> _orden `ui -> 72 `ui == -> _orden `ui -> 104 `ui 389  ]
+[e = _ope -> :s 9C `uc ]
+[e :U 389 ]
+"165
+[; ;controlMotores.c: 165:         }
+}
+[e :U 377 ]
+"166
+[; ;controlMotores.c: 166:        RCIF=0;
+[e = _RCIF -> -> 0 `i `b ]
+"167
+[; ;controlMotores.c: 167:     }
+}
+[e :U 376 ]
+"169
+[; ;controlMotores.c: 169:     if(TMR0IF==1){
+[e $ ! == -> _TMR0IF `i -> 1 `i 390  ]
+{
+"170
+[; ;controlMotores.c: 170:         TMR0IF=0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"171
+[; ;controlMotores.c: 171:         TMR0 = 9286;
+[e = _TMR0 -> -> 9286 `i `us ]
+"173
+[; ;controlMotores.c: 173:         if (ac==1 && counter==-1){
+[e $ ! && == _ac -> 1 `i == _counter -U -> 1 `i 391  ]
+{
+"174
+[; ;controlMotores.c: 174:             if(pasosX>0){
+[e $ ! > _pasosX -> -> 0 `i `ui 392  ]
+{
+"175
+[; ;controlMotores.c: 175:                 TMR1ON=1;
+[e = _TMR1ON -> -> 1 `i `b ]
+"176
+[; ;controlMotores.c: 176:             }
+}
+[e :U 392 ]
+"178
+[; ;controlMotores.c: 178:             if(pasosY>0){
+[e $ ! > _pasosY -> -> 0 `i `ui 393  ]
+{
+"179
+[; ;controlMotores.c: 179:                 TMR3ON=1;
+[e = _TMR3ON -> -> 1 `i `b ]
+"180
+[; ;controlMotores.c: 180:             }
+}
+[e :U 393 ]
+"181
+[; ;controlMotores.c: 181:         }
+}
+[e :U 391 ]
+"183
+[; ;controlMotores.c: 183:         if (ac==1){
+[e $ ! == _ac -> 1 `i 394  ]
+{
+"184
+[; ;controlMotores.c: 184:             counter++;
+[e ++ _counter -> 1 `i ]
+"185
+[; ;controlMotores.c: 185:         } else if (des==1){
+}
+[e $U 395  ]
+[e :U 394 ]
+[e $ ! == _des -> 1 `i 396  ]
+{
+"186
+[; ;controlMotores.c: 186:             counter--;
+[e -- _counter -> 1 `i ]
+"187
+[; ;controlMotores.c: 187:         } else if (cru==1){
+}
+[e $U 397  ]
+[e :U 396 ]
+[e $ ! == _cru -> 1 `i 398  ]
+{
+"188
+[; ;controlMotores.c: 188:             counterVC++;
+[e ++ _counterVC -> 1 `i ]
+"189
+[; ;controlMotores.c: 189:         }
+}
+[e :U 398 ]
+[e :U 397 ]
+[e :U 395 ]
+"191
+[; ;controlMotores.c: 191:         if(counter>=19 && ac==1){
+[e $ ! && >= _counter -> 19 `i == _ac -> 1 `i 399  ]
+{
+"192
+[; ;controlMotores.c: 192:             ac=0;
+[e = _ac -> 0 `i ]
+"193
+[; ;controlMotores.c: 193:             cru=1;
+[e = _cru -> 1 `i ]
+"194
+[; ;controlMotores.c: 194:         }else if(counter>=19 && cru==1 && counterVC>=20){
+}
+[e $U 400  ]
+[e :U 399 ]
+[e $ ! && && >= _counter -> 19 `i == _cru -> 1 `i >= _counterVC -> 20 `i 401  ]
+{
+"195
+[; ;controlMotores.c: 195:             cru=0;
+[e = _cru -> 0 `i ]
+"196
+[; ;controlMotores.c: 196:             des=1;
+[e = _des -> 1 `i ]
+"197
+[; ;controlMotores.c: 197:         }else if(counter<0 && des==1){
+}
+[e $U 402  ]
+[e :U 401 ]
+[e $ ! && < _counter -> 0 `i == _des -> 1 `i 403  ]
+{
+"198
+[; ;controlMotores.c: 198:             des=0;
+[e = _des -> 0 `i ]
+"199
+[; ;controlMotores.c: 199:         }
+}
+[e :U 403 ]
+[e :U 402 ]
+[e :U 400 ]
+"201
+[; ;controlMotores.c: 201:         if(counter>=0 && counter<=19){
+[e $ ! && >= _counter -> 0 `i <= _counter -> 19 `i 404  ]
+{
+"202
+[; ;controlMotores.c: 202:             precargaX=arrayX[counter];
+[e = _precargaX *U + &U _arrayX * -> -> _counter `ui `ux -> -> # *U &U _arrayX `ui `ux ]
+"203
+[; ;controlMotores.c: 203:             precargaY=arrayY[counter];
+[e = _precargaY *U + &U _arrayY * -> -> _counter `ui `ux -> -> # *U &U _arrayY `ui `ux ]
+"204
+[; ;controlMotores.c: 204:         }
+}
+[e :U 404 ]
+"206
+[; ;controlMotores.c: 206:         if(finX==0){
+[e $ ! == _finX -> 0 `i 405  ]
+{
+"207
+[; ;controlMotores.c: 207:             TMR1 = precargaX;
+[e = _TMR1 -> _precargaX `us ]
+"208
+[; ;controlMotores.c: 208:         }
+}
+[e :U 405 ]
+"210
+[; ;controlMotores.c: 210:         if(finY==0){
+[e $ ! == _finY -> 0 `i 406  ]
+{
+"211
+[; ;controlMotores.c: 211:             TMR3 = precargaY;
+[e = _TMR3 -> _precargaY `us ]
+"212
+[; ;controlMotores.c: 212:         }
+}
+[e :U 406 ]
+"214
+[; ;controlMotores.c: 214:         if(finY==1 && finX==1){
+[e $ ! && == _finY -> 1 `i == _finX -> 1 `i 407  ]
+{
+"215
+[; ;controlMotores.c: 215:             TMR0ON = 0;
+[e = _TMR0ON -> -> 0 `i `b ]
+"216
+[; ;controlMotores.c: 216:             TMR1ON = 0;
+[e = _TMR1ON -> -> 0 `i `b ]
+"217
+[; ;controlMotores.c: 217:             TMR3ON = 0;
+[e = _TMR3ON -> -> 0 `i `b ]
+"218
+[; ;controlMotores.c: 218:         }
+}
+[e :U 407 ]
+"219
+[; ;controlMotores.c: 219:     }
+}
+[e :U 390 ]
+"221
+[; ;controlMotores.c: 221:     if(TMR1IF==1){
+[e $ ! == -> _TMR1IF `i -> 1 `i 408  ]
+{
+"222
+[; ;controlMotores.c: 222:         TMR1IF=0;
+[e = _TMR1IF -> -> 0 `i `b ]
+"223
+[; ;controlMotores.c: 223:         TMR1 = precargaX;
+[e = _TMR1 -> _precargaX `us ]
+"225
+[; ;controlMotores.c: 225:         if(LATD0==1 && pasosXDados<pasosX){
+[e $ ! && == -> _LATD0 `i -> 1 `i < _pasosXDados _pasosX 409  ]
+{
+"226
+[; ;controlMotores.c: 226:             pasosXDados++;
+[e ++ _pasosXDados -> -> 1 `i `ui ]
+"227
+[; ;controlMotores.c: 227:             LATD0=0;
+[e = _LATD0 -> -> 0 `i `b ]
+"228
+[; ;controlMotores.c: 228:         } else if(LATD0==0 && pasosXDados<pasosX){
+}
+[e $U 410  ]
+[e :U 409 ]
+[e $ ! && == -> _LATD0 `i -> 0 `i < _pasosXDados _pasosX 411  ]
+{
+"229
+[; ;controlMotores.c: 229:             LATD0=1;
+[e = _LATD0 -> -> 1 `i `b ]
+"230
+[; ;controlMotores.c: 230:         } else if(pasosXDados>=pasosX){
+}
+[e $U 412  ]
+[e :U 411 ]
+[e $ ! >= _pasosXDados _pasosX 413  ]
+{
+"231
+[; ;controlMotores.c: 231:             finX = 1;
+[e = _finX -> 1 `i ]
+"232
+[; ;controlMotores.c: 232:             TMR1ON = 0;
+[e = _TMR1ON -> -> 0 `i `b ]
+"233
+[; ;controlMotores.c: 233:         }
+}
+[e :U 413 ]
+[e :U 412 ]
+[e :U 410 ]
+"235
+[; ;controlMotores.c: 235:     }
+}
+[e :U 408 ]
+"237
+[; ;controlMotores.c: 237:     if(TMR3IF==1){
+[e $ ! == -> _TMR3IF `i -> 1 `i 414  ]
+{
+"238
+[; ;controlMotores.c: 238:         TMR3IF=0;
+[e = _TMR3IF -> -> 0 `i `b ]
+"239
+[; ;controlMotores.c: 239:         TMR3 = precargaY;
+[e = _TMR3 -> _precargaY `us ]
+"241
+[; ;controlMotores.c: 241:         if(LATD1==1 && pasosYDados<pasosY){
+[e $ ! && == -> _LATD1 `i -> 1 `i < _pasosYDados _pasosY 415  ]
+{
+"242
+[; ;controlMotores.c: 242:             pasosYDados++;
+[e ++ _pasosYDados -> -> 1 `i `ui ]
+"243
+[; ;controlMotores.c: 243:             LATD1 = 0;
+[e = _LATD1 -> -> 0 `i `b ]
+"244
+[; ;controlMotores.c: 244:         } else if(LATD1==0 && pasosYDados<pasosY){
+}
+[e $U 416  ]
+[e :U 415 ]
+[e $ ! && == -> _LATD1 `i -> 0 `i < _pasosYDados _pasosY 417  ]
+{
+"245
+[; ;controlMotores.c: 245:             LATD1 = 1;
+[e = _LATD1 -> -> 1 `i `b ]
+"246
+[; ;controlMotores.c: 246:         } else if(pasosYDados>=pasosY){
+}
+[e $U 418  ]
+[e :U 417 ]
+[e $ ! >= _pasosYDados _pasosY 419  ]
+{
+"247
+[; ;controlMotores.c: 247:             finY = 1;
+[e = _finY -> 1 `i ]
+"248
+[; ;controlMotores.c: 248:             TMR3ON = 0;
+[e = _TMR3ON -> -> 0 `i `b ]
+"249
+[; ;controlMotores.c: 249:         }
+}
+[e :U 419 ]
+[e :U 418 ]
+[e :U 416 ]
+"250
+[; ;controlMotores.c: 250:     }
+}
+[e :U 414 ]
+"251
+[; ;controlMotores.c: 251: }
+[e :UE 375 ]
+}
+"252
+[; ;controlMotores.c: 252: void Transmitir(unsigned char dato){
+[v _Transmitir `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _Transmitir ]
+[v _dato `uc ~T0 @X0 1 r1 ]
+[f ]
+"254
+[; ;controlMotores.c: 254:     while(TRMT==0);
+[e $U 421  ]
+[e :U 422 ]
+[e :U 421 ]
+[e $ == -> _TRMT `i -> 0 `i 422  ]
+[e :U 423 ]
+"255
+[; ;controlMotores.c: 255:     TXREG=dato;
+[e = _TXREG _dato ]
+"256
+[; ;controlMotores.c: 256: }
+[e :UE 420 ]
+}
+"257
+[; ;controlMotores.c: 257: void precargas(void){
+[v _precargas `(v ~T0 @X0 1 ef ]
+{
+[e :U _precargas ]
+[f ]
+"258
+[; ;controlMotores.c: 258:    int i;
+[v _i `i ~T0 @X0 1 a ]
+"259
+[; ;controlMotores.c: 259:    for (i=1;i<21;i++){
+{
+[e = _i -> 1 `i ]
+[e $ < _i -> 21 `i 425  ]
+[e $U 426  ]
+[e :U 425 ]
+{
+"261
+[; ;controlMotores.c: 261:         vInsx = i*v5x;
+[e = _vInsx * -> _i `f _v5x ]
+"262
+[; ;controlMotores.c: 262:         vInsy = i*v5y;
+[e = _vInsy * -> _i `f _v5y ]
+"264
+[; ;controlMotores.c: 264:         if(vInsx>0){
+[e $ ! > _vInsx -> -> 0 `i `f 428  ]
+{
+"265
+[; ;controlMotores.c: 265:             TIntx = 0.5/vInsx;
+[e = _TIntx -> / .0.5 -> _vInsx `d `f ]
+"266
+[; ;controlMotores.c: 266:             arrayX[i-1] = (unsigned int)(65536 - ((TIntx*2000000)/4));
+[e = *U + &U _arrayX * -> -> - _i -> 1 `i `ui `ux -> -> # *U &U _arrayX `ui `ux -> - -> -> 65536 `l `f / * _TIntx -> -> 2000000 `l `f -> -> 4 `i `f `ui ]
+"267
+[; ;controlMotores.c: 267:         }
+}
+[e :U 428 ]
+"269
+[; ;controlMotores.c: 269:         if(vInsy>0){
+[e $ ! > _vInsy -> -> 0 `i `f 429  ]
+{
+"270
+[; ;controlMotores.c: 270:             TInty = 0.5/vInsy;
+[e = _TInty -> / .0.5 -> _vInsy `d `f ]
+"271
+[; ;controlMotores.c: 271:             arrayY[i-1] = (unsigned int)(65536 - ((TInty*2000000)/4));
+[e = *U + &U _arrayY * -> -> - _i -> 1 `i `ui `ux -> -> # *U &U _arrayY `ui `ux -> - -> -> 65536 `l `f / * _TInty -> -> 2000000 `l `f -> -> 4 `i `f `ui ]
+"272
+[; ;controlMotores.c: 272:         }
+}
+[e :U 429 ]
+"273
+[; ;controlMotores.c: 273:    }
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 21 `i 425  ]
+[e :U 426 ]
+}
+"274
+[; ;controlMotores.c: 274: }
+[e :UE 424 ]
+}
+"276
+[; ;controlMotores.c: 276: void goHome(void){
+[v _goHome `(v ~T0 @X0 1 ef ]
+{
+[e :U _goHome ]
+[f ]
+"278
+[; ;controlMotores.c: 278:     LATD2 = 0;
+[e = _LATD2 -> -> 0 `i `b ]
+"279
+[; ;controlMotores.c: 279:     LATD3 = 0;
+[e = _LATD3 -> -> 0 `i `b ]
+"280
+[; ;controlMotores.c: 280:     LATD4 = 0;
+[e = _LATD4 -> -> 0 `i `b ]
+"283
+[; ;controlMotores.c: 283:     while(RB2==0){
+[e $U 431  ]
+[e :U 432 ]
+{
+"284
+[; ;controlMotores.c: 284:         LATD5=1;
+[e = _LATD5 -> -> 1 `i `b ]
+"285
+[; ;controlMotores.c: 285:         _delay((unsigned long)((tDelay)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> _tDelay `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"286
+[; ;controlMotores.c: 286:         LATD5=0;
+[e = _LATD5 -> -> 0 `i `b ]
+"287
+[; ;controlMotores.c: 287:         _delay((unsigned long)((tDelay)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> _tDelay `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"288
+[; ;controlMotores.c: 288:     }
+}
+[e :U 431 ]
+"283
+[; ;controlMotores.c: 283:     while(RB2==0){
+[e $ == -> _RB2 `i -> 0 `i 432  ]
+[e :U 433 ]
+"290
+[; ;controlMotores.c: 290:     while(RB0==0 || RB1==0){
+[e $U 434  ]
+[e :U 435 ]
+{
+"291
+[; ;controlMotores.c: 291:         if(RB0==0){
+[e $ ! == -> _RB0 `i -> 0 `i 437  ]
+{
+"292
+[; ;controlMotores.c: 292:             LATD0=1;
+[e = _LATD0 -> -> 1 `i `b ]
+"293
+[; ;controlMotores.c: 293:         }
+}
+[e :U 437 ]
+"295
+[; ;controlMotores.c: 295:         if(RB1==0){
+[e $ ! == -> _RB1 `i -> 0 `i 438  ]
+{
+"296
+[; ;controlMotores.c: 296:             LATD1=1;
+[e = _LATD1 -> -> 1 `i `b ]
+"297
+[; ;controlMotores.c: 297:         }
+}
+[e :U 438 ]
+"299
+[; ;controlMotores.c: 299:         _delay((unsigned long)((tDelay)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> _tDelay `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"301
+[; ;controlMotores.c: 301:         LATD0=0;
+[e = _LATD0 -> -> 0 `i `b ]
+"302
+[; ;controlMotores.c: 302:         LATD1=0;
+[e = _LATD1 -> -> 0 `i `b ]
+"304
+[; ;controlMotores.c: 304:         _delay((unsigned long)((tDelay)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> _tDelay `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"305
+[; ;controlMotores.c: 305:     }
+}
+[e :U 434 ]
+"290
+[; ;controlMotores.c: 290:     while(RB0==0 || RB1==0){
+[e $ || == -> _RB0 `i -> 0 `i == -> _RB1 `i -> 0 `i 435  ]
+[e :U 436 ]
+"307
+[; ;controlMotores.c: 307:     posX=0;
+[e = _posX -> -> 0 `i `ui ]
+"308
+[; ;controlMotores.c: 308:     posY=0;
+[e = _posY -> -> 0 `i `ui ]
+"309
+[; ;controlMotores.c: 309:     posZ=0;
+[e = _posZ -> -> 0 `i `ui ]
+"310
+[; ;controlMotores.c: 310: }
+[e :UE 430 ]
+}
+"313
+[; ;controlMotores.c: 313: void mover(long int x,long int y, long int z, int absoluto){
+[v _mover `(v ~T0 @X0 1 ef4`l`l`l`i ]
+{
+[e :U _mover ]
+[v _x `l ~T0 @X0 1 r1 ]
+[v _y `l ~T0 @X0 1 r2 ]
+[v _z `l ~T0 @X0 1 r3 ]
+[v _absoluto `i ~T0 @X0 1 r4 ]
+[f ]
+"314
+[; ;controlMotores.c: 314:     if(absoluto==1){
+[e $ ! == _absoluto -> 1 `i 440  ]
+{
+"315
+[; ;controlMotores.c: 315:         if(x>posX){
+[e $ ! > _x -> _posX `l 441  ]
+{
+"316
+[; ;controlMotores.c: 316:             pasosX = (unsigned int)(x-posX);
+[e = _pasosX -> - _x -> _posX `l `ui ]
+"317
+[; ;controlMotores.c: 317:             LATD2 = 1;
+[e = _LATD2 -> -> 1 `i `b ]
+"318
+[; ;controlMotores.c: 318:         }else{
+}
+[e $U 442  ]
+[e :U 441 ]
+{
+"319
+[; ;controlMotores.c: 319:             pasosX = (unsigned int)(posX-x);
+[e = _pasosX -> - -> _posX `l _x `ui ]
+"320
+[; ;controlMotores.c: 320:             LATD2 = 0;
+[e = _LATD2 -> -> 0 `i `b ]
+"321
+[; ;controlMotores.c: 321:         }
+}
+[e :U 442 ]
+"323
+[; ;controlMotores.c: 323:         if(y>posY){
+[e $ ! > _y -> _posY `l 443  ]
+{
+"324
+[; ;controlMotores.c: 324:             pasosY = (unsigned int)(y-posY);
+[e = _pasosY -> - _y -> _posY `l `ui ]
+"325
+[; ;controlMotores.c: 325:             LATD3 = 1;
+[e = _LATD3 -> -> 1 `i `b ]
+"326
+[; ;controlMotores.c: 326:         }else{
+}
+[e $U 444  ]
+[e :U 443 ]
+{
+"327
+[; ;controlMotores.c: 327:             pasosY = (unsigned int)(posY-y);
+[e = _pasosY -> - -> _posY `l _y `ui ]
+"328
+[; ;controlMotores.c: 328:             LATD3 = 0;
+[e = _LATD3 -> -> 0 `i `b ]
+"329
+[; ;controlMotores.c: 329:         }
+}
+[e :U 444 ]
+"331
+[; ;controlMotores.c: 331:         if(z>posZ){
+[e $ ! > _z -> _posZ `l 445  ]
+{
+"332
+[; ;controlMotores.c: 332:             pasosZ = (unsigned int)(z-posZ);
+[e = _pasosZ -> - _z -> _posZ `l `ui ]
+"333
+[; ;controlMotores.c: 333:             LATD4 = 1;
+[e = _LATD4 -> -> 1 `i `b ]
+"334
+[; ;controlMotores.c: 334:         }else{
+}
+[e $U 446  ]
+[e :U 445 ]
+{
+"335
+[; ;controlMotores.c: 335:             pasosZ = (unsigned int)(posZ-z);
+[e = _pasosZ -> - -> _posZ `l _z `ui ]
+"336
+[; ;controlMotores.c: 336:             LATD4 = 0;
+[e = _LATD4 -> -> 0 `i `b ]
+"337
+[; ;controlMotores.c: 337:         }
+}
+[e :U 446 ]
+"338
+[; ;controlMotores.c: 338:     }else{
+}
+[e $U 447  ]
+[e :U 440 ]
+{
+"339
+[; ;controlMotores.c: 339:         if(x>0){
+[e $ ! > _x -> -> 0 `i `l 448  ]
+{
+"340
+[; ;controlMotores.c: 340:             pasosX = (unsigned int)(x);
+[e = _pasosX -> _x `ui ]
+"341
+[; ;controlMotores.c: 341:             LATD2 = 1;
+[e = _LATD2 -> -> 1 `i `b ]
+"342
+[; ;controlMotores.c: 342:         }else{
+}
+[e $U 449  ]
+[e :U 448 ]
+{
+"343
+[; ;controlMotores.c: 343:             pasosX = (unsigned int)(-x);
+[e = _pasosX -> -U _x `ui ]
+"344
+[; ;controlMotores.c: 344:             LATD2 = 0;
+[e = _LATD2 -> -> 0 `i `b ]
+"345
+[; ;controlMotores.c: 345:         }
+}
+[e :U 449 ]
+"347
+[; ;controlMotores.c: 347:         if(y>0){
+[e $ ! > _y -> -> 0 `i `l 450  ]
+{
+"348
+[; ;controlMotores.c: 348:             pasosY = (unsigned int)(y);
+[e = _pasosY -> _y `ui ]
+"349
+[; ;controlMotores.c: 349:             LATD3 = 1;
+[e = _LATD3 -> -> 1 `i `b ]
+"350
+[; ;controlMotores.c: 350:         }else{
+}
+[e $U 451  ]
+[e :U 450 ]
+{
+"351
+[; ;controlMotores.c: 351:             pasosY = (unsigned int)(-y);
+[e = _pasosY -> -U _y `ui ]
+"352
+[; ;controlMotores.c: 352:             LATD3 = 0;
+[e = _LATD3 -> -> 0 `i `b ]
+"353
+[; ;controlMotores.c: 353:         }
+}
+[e :U 451 ]
+"355
+[; ;controlMotores.c: 355:         if(z>0){
+[e $ ! > _z -> -> 0 `i `l 452  ]
+{
+"356
+[; ;controlMotores.c: 356:             pasosZ = (unsigned int)(z);
+[e = _pasosZ -> _z `ui ]
+"357
+[; ;controlMotores.c: 357:             LATD4 = 1;
+[e = _LATD4 -> -> 1 `i `b ]
+"358
+[; ;controlMotores.c: 358:         }else{
+}
+[e $U 453  ]
+[e :U 452 ]
+{
+"359
+[; ;controlMotores.c: 359:             pasosZ = (unsigned int)(-z);
+[e = _pasosZ -> -U _z `ui ]
+"360
+[; ;controlMotores.c: 360:             LATD4 = 0;
+[e = _LATD4 -> -> 0 `i `b ]
+"361
+[; ;controlMotores.c: 361:         }
+}
+[e :U 453 ]
+"362
+[; ;controlMotores.c: 362:     }
+}
+[e :U 447 ]
+"364
+[; ;controlMotores.c: 364:     if (pasosX>0){
+[e $ ! > _pasosX -> -> 0 `i `ui 454  ]
+{
+"365
+[; ;controlMotores.c: 365:         pasosXDados = 0;
+[e = _pasosXDados -> -> 0 `i `ui ]
+"366
+[; ;controlMotores.c: 366:         vCx = (pasosX*0.5)/Ta;
+[e = _vCx -> / * -> _pasosX `d .0.5 -> _Ta `d `f ]
+"367
+[; ;controlMotores.c: 367:         v5x = 0.05*vCx;
+[e = _v5x -> * .0.05 -> _vCx `d `f ]
+"368
+[; ;controlMotores.c: 368:     }
+}
+[e :U 454 ]
+"370
+[; ;controlMotores.c: 370:     if (pasosY>0){
+[e $ ! > _pasosY -> -> 0 `i `ui 455  ]
+{
+"371
+[; ;controlMotores.c: 371:         pasosYDados = 0;
+[e = _pasosYDados -> -> 0 `i `ui ]
+"372
+[; ;controlMotores.c: 372:         vCy = (pasosY*0.5)/Ta;
+[e = _vCy -> / * -> _pasosY `d .0.5 -> _Ta `d `f ]
+"373
+[; ;controlMotores.c: 373:         v5y = 0.05*vCy;
+[e = _v5y -> * .0.05 -> _vCy `d `f ]
+"374
+[; ;controlMotores.c: 374:     }
+}
+[e :U 455 ]
+"376
+[; ;controlMotores.c: 376:     if(pasosX>0 || pasosY>0){
+[e $ ! || > _pasosX -> -> 0 `i `ui > _pasosY -> -> 0 `i `ui 456  ]
+{
+"378
+[; ;controlMotores.c: 378:         counter = -1;
+[e = _counter -U -> 1 `i ]
+"379
+[; ;controlMotores.c: 379:         counterVC = 0;
+[e = _counterVC -> 0 `i ]
+"380
+[; ;controlMotores.c: 380:         ac=1;
+[e = _ac -> 1 `i ]
+"381
+[; ;controlMotores.c: 381:         des=0;
+[e = _des -> 0 `i ]
+"382
+[; ;controlMotores.c: 382:         cru=0;
+[e = _cru -> 0 `i ]
+"384
+[; ;controlMotores.c: 384:         precargas();
+[e ( _precargas ..  ]
+"385
+[; ;controlMotores.c: 385:         TMR0ON=1;
+[e = _TMR0ON -> -> 1 `i `b ]
+"386
+[; ;controlMotores.c: 386:         TMR0IF=0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"387
+[; ;controlMotores.c: 387:         TMR0 = 9286;
+[e = _TMR0 -> -> 9286 `i `us ]
+"389
+[; ;controlMotores.c: 389:     }
+}
+[e :U 456 ]
+"390
+[; ;controlMotores.c: 390: }
+[e :UE 439 ]
+}
+"392
+[; ;controlMotores.c: 392: void guardarV(){
+[v _guardarV `(v ~T0 @X0 1 ef ]
+{
+[e :U _guardarV ]
+[f ]
+"393
+[; ;controlMotores.c: 393:     if(vactual!=0){
+[e $ ! != _vactual -> -> 0 `i `ui 458  ]
+{
+"395
+[; ;controlMotores.c: 395:         if(vactual==1){
+[e $ ! == _vactual -> -> 1 `i `ui 459  ]
+{
+"396
+[; ;controlMotores.c: 396:             mover(posiciones[2][1],posiciones[2][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"397
+[; ;controlMotores.c: 397:         }
+}
+[e $U 460  ]
+"398
+[; ;controlMotores.c: 398:         else if(vactual==2){
+[e :U 459 ]
+[e $ ! == _vactual -> -> 2 `i `ui 461  ]
+{
+"399
+[; ;controlMotores.c: 399:             mover(posiciones[3][1],posiciones[3][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"400
+[; ;controlMotores.c: 400:         }
+}
+[e $U 462  ]
+"401
+[; ;controlMotores.c: 401:         else if(vactual==3){
+[e :U 461 ]
+[e $ ! == _vactual -> -> 3 `i `ui 463  ]
+{
+"402
+[; ;controlMotores.c: 402:             mover(posiciones[4][1],posiciones[4][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 4 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 4 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 4 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 4 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"403
+[; ;controlMotores.c: 403:         }
+}
+[e $U 464  ]
+"404
+[; ;controlMotores.c: 404:         else if(vactual==4){
+[e :U 463 ]
+[e $ ! == _vactual -> -> 4 `i `ui 465  ]
+{
+"405
+[; ;controlMotores.c: 405:             mover(posiciones[5][1],posiciones[5][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 5 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 5 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 5 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 5 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"406
+[; ;controlMotores.c: 406:         }
+}
+[e $U 466  ]
+"407
+[; ;controlMotores.c: 407:         else if(vactual==5){
+[e :U 465 ]
+[e $ ! == _vactual -> -> 5 `i `ui 467  ]
+{
+"408
+[; ;controlMotores.c: 408:             mover(posiciones[6][1],posiciones[6][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 6 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 6 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 6 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 6 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"409
+[; ;controlMotores.c: 409:         }else if(vactual==6){
+}
+[e $U 468  ]
+[e :U 467 ]
+[e $ ! == _vactual -> -> 6 `i `ui 469  ]
+{
+"410
+[; ;controlMotores.c: 410:             mover(posiciones[7][1],posiciones[7][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 7 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 7 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 7 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 7 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"411
+[; ;controlMotores.c: 411:         }else if(vactual==7){
+}
+[e $U 470  ]
+[e :U 469 ]
+[e $ ! == _vactual -> -> 7 `i `ui 471  ]
+{
+"412
+[; ;controlMotores.c: 412:             mover(posiciones[8][1],posiciones[8][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 8 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 8 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 8 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 8 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"413
+[; ;controlMotores.c: 413:         }else if(vactual==8){
+}
+[e $U 472  ]
+[e :U 471 ]
+[e $ ! == _vactual -> -> 8 `i `ui 473  ]
+{
+"414
+[; ;controlMotores.c: 414:             mover(posiciones[9][1],posiciones[9][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"415
+[; ;controlMotores.c: 415:         }else if(vactual==9){
+}
+[e $U 474  ]
+[e :U 473 ]
+[e $ ! == _vactual -> -> 9 `i `ui 475  ]
+{
+"416
+[; ;controlMotores.c: 416:             mover(posiciones[10][1],posiciones[10][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 10 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 10 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 10 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 10 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"417
+[; ;controlMotores.c: 417:         }
+}
+[e :U 475 ]
+[e :U 474 ]
+[e :U 472 ]
+[e :U 470 ]
+[e :U 468 ]
+[e :U 466 ]
+[e :U 464 ]
+[e :U 462 ]
+[e :U 460 ]
+"418
+[; ;controlMotores.c: 418:         mover(0,0,1500,0);
+[e ( _mover (4 , , , -> -> 0 `i `l -> -> 0 `i `l -> -> 1500 `i `l -> 0 `i ]
+"419
+[; ;controlMotores.c: 419:         mover(0,-50,0,0);
+[e ( _mover (4 , , , -> -> 0 `i `l -> -U -> 50 `i `l -> -> 0 `i `l -> 0 `i ]
+"420
+[; ;controlMotores.c: 420:         mover(0,0,-1500,0);
+[e ( _mover (4 , , , -> -> 0 `i `l -> -> 0 `i `l -> -U -> 1500 `i `l -> 0 `i ]
+"421
+[; ;controlMotores.c: 421:         vactual=0;
+[e = _vactual -> -> 0 `i `ui ]
+"422
+[; ;controlMotores.c: 422:       }
+}
+[e $U 476  ]
+"423
+[; ;controlMotores.c: 423:     else{
+[e :U 458 ]
+{
+"424
+[; ;controlMotores.c: 424:         Transmitir('E');
+[e ( _Transmitir (1 -> -> 69 `ui `uc ]
+"425
+[; ;controlMotores.c: 425:         Transmitir('R');
+[e ( _Transmitir (1 -> -> 82 `ui `uc ]
+"426
+[; ;controlMotores.c: 426:         Transmitir('R');
+[e ( _Transmitir (1 -> -> 82 `ui `uc ]
+"427
+[; ;controlMotores.c: 427:         Transmitir('O');
+[e ( _Transmitir (1 -> -> 79 `ui `uc ]
+"428
+[; ;controlMotores.c: 428:         Transmitir('R');
+[e ( _Transmitir (1 -> -> 82 `ui `uc ]
+"429
+[; ;controlMotores.c: 429:         Transmitir(' ');
+[e ( _Transmitir (1 -> -> 32 `ui `uc ]
+"430
+[; ;controlMotores.c: 430:         Transmitir('S');
+[e ( _Transmitir (1 -> -> 83 `ui `uc ]
+"431
+[; ;controlMotores.c: 431:         Transmitir('A');
+[e ( _Transmitir (1 -> -> 65 `ui `uc ]
+"432
+[; ;controlMotores.c: 432:         Transmitir('Q');
+[e ( _Transmitir (1 -> -> 81 `ui `uc ]
+"433
+[; ;controlMotores.c: 433:         Transmitir('U');
+[e ( _Transmitir (1 -> -> 85 `ui `uc ]
+"434
+[; ;controlMotores.c: 434:         Transmitir('E');
+[e ( _Transmitir (1 -> -> 69 `ui `uc ]
+"435
+[; ;controlMotores.c: 435:         Transmitir(' ');
+[e ( _Transmitir (1 -> -> 32 `ui `uc ]
+"436
+[; ;controlMotores.c: 436:         Transmitir('A');
+[e ( _Transmitir (1 -> -> 65 `ui `uc ]
+"437
+[; ;controlMotores.c: 437:         Transmitir('N');
+[e ( _Transmitir (1 -> -> 78 `ui `uc ]
+"438
+[; ;controlMotores.c: 438:         Transmitir('T');
+[e ( _Transmitir (1 -> -> 84 `ui `uc ]
+"439
+[; ;controlMotores.c: 439:         Transmitir('E');
+[e ( _Transmitir (1 -> -> 69 `ui `uc ]
+"440
+[; ;controlMotores.c: 440:         Transmitir('S');
+[e ( _Transmitir (1 -> -> 83 `ui `uc ]
+"441
+[; ;controlMotores.c: 441:     }
+}
+[e :U 476 ]
+"442
+[; ;controlMotores.c: 442:     estado='e';
+[e = _estado -> -> 101 `ui `uc ]
+"443
+[; ;controlMotores.c: 443:   }
+[e :UE 457 ]
+}
+"445
+[; ;controlMotores.c: 445: void sacarV(){
+[v _sacarV `(v ~T0 @X0 1 ef ]
+{
+[e :U _sacarV ]
+[f ]
+"446
+[; ;controlMotores.c: 446:     vs=carro;
+[e = _vs _carro ]
+"447
+[; ;controlMotores.c: 447:     if(vactual==0){
+[e $ ! == _vactual -> -> 0 `i `ui 478  ]
+{
+"449
+[; ;controlMotores.c: 449:         if(vs==1){
+[e $ ! == _vs -> -> 1 `i `ui 479  ]
+{
+"450
+[; ;controlMotores.c: 450:             mover(posiciones[2][1],posiciones[2][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 2 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"451
+[; ;controlMotores.c: 451:             vactual=1;
+[e = _vactual -> -> 1 `i `ui ]
+"452
+[; ;controlMotores.c: 452:         }
+}
+[e $U 480  ]
+"453
+[; ;controlMotores.c: 453:         else if(vs==2){
+[e :U 479 ]
+[e $ ! == _vs -> -> 2 `i `ui 481  ]
+{
+"454
+[; ;controlMotores.c: 454:             mover(posiciones[3][1],posiciones[3][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 3 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"455
+[; ;controlMotores.c: 455:             vactual=2;
+[e = _vactual -> -> 2 `i `ui ]
+"456
+[; ;controlMotores.c: 456:         }
+}
+[e $U 482  ]
+"457
+[; ;controlMotores.c: 457:         else if(vs==3){
+[e :U 481 ]
+[e $ ! == _vs -> -> 3 `i `ui 483  ]
+{
+"458
+[; ;controlMotores.c: 458:             mover(posiciones[4][1],posiciones[4][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 4 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 4 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 4 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 4 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"459
+[; ;controlMotores.c: 459:             vactual=3;
+[e = _vactual -> -> 3 `i `ui ]
+"460
+[; ;controlMotores.c: 460:         }
+}
+[e $U 484  ]
+"461
+[; ;controlMotores.c: 461:         else if(vs==4){
+[e :U 483 ]
+[e $ ! == _vs -> -> 4 `i `ui 485  ]
+{
+"462
+[; ;controlMotores.c: 462:             mover(posiciones[5][1],posiciones[5][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 5 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 5 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 5 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 5 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"463
+[; ;controlMotores.c: 463:             vactual=4;
+[e = _vactual -> -> 4 `i `ui ]
+"464
+[; ;controlMotores.c: 464:         }
+}
+[e $U 486  ]
+"465
+[; ;controlMotores.c: 465:         else if(vs==5){
+[e :U 485 ]
+[e $ ! == _vs -> -> 5 `i `ui 487  ]
+{
+"466
+[; ;controlMotores.c: 466:             mover(posiciones[6][1],posiciones[6][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 6 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 6 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 6 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 6 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"467
+[; ;controlMotores.c: 467:             vactual=5;
+[e = _vactual -> -> 5 `i `ui ]
+"468
+[; ;controlMotores.c: 468:         }else if(vs==6){
+}
+[e $U 488  ]
+[e :U 487 ]
+[e $ ! == _vs -> -> 6 `i `ui 489  ]
+{
+"469
+[; ;controlMotores.c: 469:             mover(posiciones[7][1],posiciones[7][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 7 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 7 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 7 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 7 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"470
+[; ;controlMotores.c: 470:             vactual=6;
+[e = _vactual -> -> 6 `i `ui ]
+"471
+[; ;controlMotores.c: 471:         }else if(vs==7){
+}
+[e $U 490  ]
+[e :U 489 ]
+[e $ ! == _vs -> -> 7 `i `ui 491  ]
+{
+"472
+[; ;controlMotores.c: 472:             mover(posiciones[8][1],posiciones[8][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 8 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 8 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 8 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 8 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"473
+[; ;controlMotores.c: 473:             vactual=7;
+[e = _vactual -> -> 7 `i `ui ]
+"474
+[; ;controlMotores.c: 474:         }else if(vs==8){
+}
+[e $U 492  ]
+[e :U 491 ]
+[e $ ! == _vs -> -> 8 `i `ui 493  ]
+{
+"475
+[; ;controlMotores.c: 475:             mover(posiciones[9][1],posiciones[9][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 9 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"476
+[; ;controlMotores.c: 476:             vactual=8;
+[e = _vactual -> -> 8 `i `ui ]
+"477
+[; ;controlMotores.c: 477:         }else if(vs==9){
+}
+[e $U 494  ]
+[e :U 493 ]
+[e $ ! == _vs -> -> 9 `i `ui 495  ]
+{
+"478
+[; ;controlMotores.c: 478:             mover(posiciones[10][1],posiciones[10][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 10 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 10 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 10 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 10 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"479
+[; ;controlMotores.c: 479:             vactual=9;
+[e = _vactual -> -> 9 `i `ui ]
+"480
+[; ;controlMotores.c: 480:         }
+}
+[e :U 495 ]
+[e :U 494 ]
+[e :U 492 ]
+[e :U 490 ]
+[e :U 488 ]
+[e :U 486 ]
+[e :U 484 ]
+[e :U 482 ]
+[e :U 480 ]
+"481
+[; ;controlMotores.c: 481:         mover(0,-50,0,0);
+[e ( _mover (4 , , , -> -> 0 `i `l -> -U -> 50 `i `l -> -> 0 `i `l -> 0 `i ]
+"482
+[; ;controlMotores.c: 482:         mover(0,0,1500,0);
+[e ( _mover (4 , , , -> -> 0 `i `l -> -> 0 `i `l -> -> 1500 `i `l -> 0 `i ]
+"483
+[; ;controlMotores.c: 483:         mover(0,50,0,0);
+[e ( _mover (4 , , , -> -> 0 `i `l -> -> 50 `i `l -> -> 0 `i `l -> 0 `i ]
+"484
+[; ;controlMotores.c: 484:         mover(0,0,-1500,0);
+[e ( _mover (4 , , , -> -> 0 `i `l -> -> 0 `i `l -> -U -> 1500 `i `l -> 0 `i ]
+"485
+[; ;controlMotores.c: 485:         mover(posiciones[11][1],posiciones[11][2],800,1);
+[e ( _mover (4 , , , -> *U + &U *U + &U _posiciones * -> -> -> 11 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 1 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 11 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> *U + &U *U + &U _posiciones * -> -> -> 11 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux * -> -> -> 2 `i `ui `ux -> -> # *U &U *U + &U _posiciones * -> -> -> 11 `i `ui `ux -> * -> # *U &U *U &U _posiciones `ui -> -> 2 `i `ui `ux `ui `ux `l -> -> 800 `i `l -> 1 `i ]
+"486
+[; ;controlMotores.c: 486:         vs=0;
+[e = _vs -> -> 0 `i `ui ]
+"487
+[; ;controlMotores.c: 487:       }
+}
+[e $U 496  ]
+"488
+[; ;controlMotores.c: 488:     else{
+[e :U 478 ]
+{
+"489
+[; ;controlMotores.c: 489:         Transmitir('m');
+[e ( _Transmitir (1 -> -> 109 `ui `uc ]
+"490
+[; ;controlMotores.c: 490:         Transmitir('E');
+[e ( _Transmitir (1 -> -> 69 `ui `uc ]
+"491
+[; ;controlMotores.c: 491:         Transmitir('R');
+[e ( _Transmitir (1 -> -> 82 `ui `uc ]
+"492
+[; ;controlMotores.c: 492:         Transmitir('R');
+[e ( _Transmitir (1 -> -> 82 `ui `uc ]
+"493
+[; ;controlMotores.c: 493:         Transmitir('O');
+[e ( _Transmitir (1 -> -> 79 `ui `uc ]
+"494
+[; ;controlMotores.c: 494:         Transmitir('R');
+[e ( _Transmitir (1 -> -> 82 `ui `uc ]
+"495
+[; ;controlMotores.c: 495:         Transmitir(' ');
+[e ( _Transmitir (1 -> -> 32 `ui `uc ]
+"496
+[; ;controlMotores.c: 496:         Transmitir('G');
+[e ( _Transmitir (1 -> -> 71 `ui `uc ]
+"497
+[; ;controlMotores.c: 497:         Transmitir('U');
+[e ( _Transmitir (1 -> -> 85 `ui `uc ]
+"498
+[; ;controlMotores.c: 498:         Transmitir('A');
+[e ( _Transmitir (1 -> -> 65 `ui `uc ]
+"499
+[; ;controlMotores.c: 499:         Transmitir('R');
+[e ( _Transmitir (1 -> -> 82 `ui `uc ]
+"500
+[; ;controlMotores.c: 500:         Transmitir('D');
+[e ( _Transmitir (1 -> -> 68 `ui `uc ]
+"501
+[; ;controlMotores.c: 501:         Transmitir('E');
+[e ( _Transmitir (1 -> -> 69 `ui `uc ]
+"502
+[; ;controlMotores.c: 502:         Transmitir(' ');
+[e ( _Transmitir (1 -> -> 32 `ui `uc ]
+"503
+[; ;controlMotores.c: 503:         Transmitir('A');
+[e ( _Transmitir (1 -> -> 65 `ui `uc ]
+"504
+[; ;controlMotores.c: 504:         Transmitir('N');
+[e ( _Transmitir (1 -> -> 78 `ui `uc ]
+"505
+[; ;controlMotores.c: 505:         Transmitir('T');
+[e ( _Transmitir (1 -> -> 84 `ui `uc ]
+"506
+[; ;controlMotores.c: 506:         Transmitir('E');
+[e ( _Transmitir (1 -> -> 69 `ui `uc ]
+"507
+[; ;controlMotores.c: 507:         Transmitir('S');
+[e ( _Transmitir (1 -> -> 83 `ui `uc ]
+"508
+[; ;controlMotores.c: 508:     }
+}
+[e :U 496 ]
+"509
+[; ;controlMotores.c: 509:     estado='e';
+[e = _estado -> -> 101 `ui `uc ]
+"510
+[; ;controlMotores.c: 510: }
+[e :UE 477 ]
+}
+[a 6C 101 0 ]
+[a 4C 83 0 ]
+[a 8C 83 0 ]
+[a 1C 72 0 ]
+[a 9C 72 0 ]
+[a 2C 71 0 ]
+[a 7C 71 0 ]
+[a 3C 48 0 ]
+[a 5C 48 0 ]

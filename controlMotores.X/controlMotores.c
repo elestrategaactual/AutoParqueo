@@ -70,9 +70,9 @@ void main(void) {
     LATD = 0;
     RBPU=0;
     //Direcciones
-    LATD2 = 1;      //Dirección motor X
-    LATD3 = 1;      //Dirección motor Y
-    LATD4 = 1;      //Dirección motor Z
+    //LATD2 = 1;      //Dirección motor X
+    //LATD3 = 1;      //Dirección motor Y
+    //LATD4 = 1;      //Dirección motor Z
     
     //Configuracion pines de los finales de carrera
     TRISB = 0b11111111; //B0 FinalX, B1 FinalY, B2 FinalZ
@@ -93,31 +93,37 @@ void main(void) {
     
     //Configuración TMR0
     T0CON = 0b00000010;
-    TMR0ON = 1;
+    TMR0ON = 0;
     TMR0 =9286;        //Interrupciones cada 0.225 s
     
     //Configuración TMR1
     T1CON = 0b10100000;
-    TMR1ON = 1;
+    TMR1ON = 0;
     
     //Configuración TMR3
     T3CON = 0b10100000;
-    TMR3ON = 1;
+    TMR3ON = 0;
+    
     //configuración comunicación serial
     RCSTA=0b10010000;
     TXSTA=0b00100000;
     BAUDCON=0b00000000;
     SPBRG=12;
+    
     //interrupcion recepción de datos.
     RCIP=1;
     RCIF=0;
     RCIE=1;
+    
     //Habilitamos las interrupciones perifericas
     PEIE = 1;
+    
     //Habilitamos todas las interrupciones
-    GIE = 1; 
+    GIE = 1;
+    
     //hacemos set al origen
     goHome();
+    
     while(1){
         if(ope=="H"){
             Transmitir('o');
@@ -159,9 +165,21 @@ void __interrupt() ISR(void){
         }
        RCIF=0;
     }
+    
     if(TMR0IF==1){
         TMR0IF=0;
         TMR0 = 9286;
+        
+        if (ac==1 && counter==-1){
+            if(pasosX>0){
+                TMR1ON=1;       //Encender el Timer 1
+            }
+        
+            if(pasosY>0){
+                TMR3ON=1;       //Encender el Timer 3
+            }
+        }
+        
         if (ac==1){
             counter++;
         } else if (des==1){
@@ -239,12 +257,19 @@ void Transmitir(unsigned char dato){
 void precargas(void){
    int i;
    for (i=1;i<21;i++){
-        vInsx = i*v5x;//(1.0*counter*vCx)/20.0;
-        vInsy = i*v5y;//(1.0*counter*vCy)/20.0;
-        TIntx = 0.5/vInsx;//1.0/(vInsx*2.0);
-        TInty = 0.5/vInsy;//1.0/(vInsy*2.0);
-        arrayX[i-1] = (unsigned int)(65536 - ((TIntx*2000000)/4));//(unsigned int)(65536 - ((TIntx*2000000)/4));
-        arrayY[i-1] = (unsigned int)(65536 - ((TInty*2000000)/4));
+       
+        vInsx = i*v5x;
+        vInsy = i*v5y;
+        
+        if(vInsx>0){
+            TIntx = 0.5/vInsx;//1.0/(vInsx*2.0);
+            arrayX[i-1] = (unsigned int)(65536 - ((TIntx*2000000)/4));
+        }
+        
+        if(vInsy>0){
+            TInty = 0.5/vInsy;
+            arrayY[i-1] = (unsigned int)(65536 - ((TInty*2000000)/4));
+        }        
    }
 }
 
@@ -254,7 +279,6 @@ void goHome(void){
     dir_Y = 0;      //Dirección motor Y
     dir_Z = 0;      //Dirección motor Z
     
-
     
     while(F_Z==0){  //Devolver el Z
         step_Z=1;
@@ -350,6 +374,7 @@ void mover(long int x,long int y, long int z, int absoluto){
     }
     
     if(pasosX>0 || pasosY>0){
+        
         counter = -1;
         counterVC = 0;
         ac=1;
@@ -357,6 +382,10 @@ void mover(long int x,long int y, long int z, int absoluto){
         cru=0;
         
         precargas();
+        TMR0ON=1;           //Encendemos el TMR0 para iniciar el proceso
+        TMR0IF=0;
+        TMR0 = 9286;
+        
     }        
 }
 
